@@ -1,0 +1,22 @@
+<!-- Partial view, only contains form fields  -->
+
+<!-- What we enter here will be used in all form fields in the site -->
+
+<div class="form-group">
+    <label for="title">Title</label>
+    <!-- we can call on article.title here because we pass article: article down to new.ejs  -->
+    <input required value="<%= article.title %> " type="text" name="title" id="title" class="form-control"> 
+</div>
+
+<div class="form-group">
+    <label for="description">Description</label>
+   <textarea required name="description" id="description" class="form-control"><%= article.description %></textarea>
+</div>
+
+<div class="form-group">
+    <label for="markdown">Markdown</label>
+   <textarea required name="markdown" id="markdown" class="form-control"><%= article.markdown %></textarea>
+</div>
+
+<a href="/home/dashboard" class="btn btn-secondary">Cancel</a>
+<button class="ml-1 btn btn-primary submit">Save</button>

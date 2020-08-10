@@ -1,0 +1,10 @@
+
+    <!-- container is bootstrap class, same with btn etc etc -->
+<div class="container">
+    <h1 class="mb-4">New Article</h1>
+    <!-- this is a form that posts the articles to 
+    the main article index page, which will just be '/' on the articles router page  -->
+    <form action='/articles' method= 'POST'>
+            <%- include('_form_fields') %>
+    </form>    
+</div>
