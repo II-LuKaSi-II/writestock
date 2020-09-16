@@ -1,0 +1,46 @@
+*** import statements eventually babel ***
+    import express from 'express'
+
+format each file with prettier
+    install prettier -> shift + cmd + p -> install extensions => type the extension name
+    when done writing a file, highlight everything, right-click and format document(prettier will format it)
+
+.gitignore file to prevent node_modules from being tracked
+node_modules (don't push node modules)
+
+git add and commit
+one extra line at the end of each file(prettier will fix this)
+comments
+
+get to start using async/await. Looks cleaner than the .then
+install prettier to help with formatting, removing extra spaces, auto add semi-colons, end of line for each file
+nodemon ?
+
+
+models/article.js
+handle cases where there's no article title or markdown
+
+a handle all route for wrong routes(get all route)
+
+routes/articles.js
+**
+
+    below line 13 -> handle case where article is not found
+    line 16 -> article (key shorthand form)
+
+    line 23 -> if(!article)
+
+    below line 33 -> handle case where article is not found
+    line 38 -> handle case where article is not found
+
+
+routes/subscribers.js
+**
+    line 42 -> maybe an async await ?
+
+routes/users.js
+**
+    line 31, let the user know how many characters the password should be(informative error message)
+    be consistent with the use of async/await or .then
+
+myscript.js -> naaaah!

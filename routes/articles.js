@@ -14,13 +14,16 @@ router.get('/edit/:id', ensureAuthenticated, async (req, res) => {
   const article = await Article.findById(req.params.id)
   res.render('articles/edit', { 
     name: req.user.name,
-    article: article })
+    article
+  })
 })
 
 
 router.get('/:slug', async (req, res) => {
   const article = await Article.findOne({ slug: req.params.slug })
+  // handle case where article does not exist
   if (article == null) res.redirect('/')
+  // if (!article)
   res.render('articles/show', { article: article })
 })
 
