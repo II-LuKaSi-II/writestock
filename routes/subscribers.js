@@ -7,7 +7,7 @@ const Subscriber = require('../models/Subscriber')
 
 //Login Page
 
-router.get('/', (req, res) => res.render('subscribe'))
+router.get('/subscribe', (req, res) => res.render('subscribe'))
 
 
 //Subscribe Handle
