@@ -6,7 +6,7 @@
       <meta name="description" content="">
       <meta name="author" content="Lucas Bennett">
       <meta name="generator" content="Jekyll v4.0.1">
-      <title>The Write Stock</title>
+      <title>Write Stock</title>
   
   <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/"> -->
   
@@ -46,10 +46,10 @@
     <!-- <link href="blog.css" rel="stylesheet"> -->
   </head>
   <body>
-  <header class="blog-header mb-2 py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
+  <header class="blog-header py-3">
+    <div style=" padding-top: 1rem; margin-top: -1rem;" class="row flex-nowrap justify-content-between align-items-center">
       <div class="col-4 pt-1">
-        <a class="text-muted" href="/subscribers/subscribe">Newsletter</a>
+        <a class="btn btn-sm btn-outline-secondary" href="/subscribers/subscribe">Newsletter</a>
       </div>
       <div class="col-4 text-center">
         <a style="text-decoration: none; font-weight: bold; font-size: 40px;"  class="blog-header-logo text-dark" href="/">Write / Stock</a>
@@ -96,6 +96,7 @@
               </div>
             </div>
           </div>
+          <div class="highlights"></div>
           <div class="col-md-6">
             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <div class="col p-4 d-flex flex-column position-static">
@@ -113,65 +114,33 @@
             </div>
           </div>
         </div>
+        <div class=" articles border-top">
+          <h1 class="ml-2 pt-4 pb-4">Latest Blog Articles</h1>
+          <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
+          <!-- This symbol < % without the = will run the code but not ouput it -->
+          <% articles.forEach(article => { %> 
+          <div class="card mb-2">
+              <div  class="card-body" >
+                      <h4 class="card-title"><%= article.title %></h4>
+                      <div class="card-subtitle text-muted mb-2">
+                          <%= article.createdAt.toLocaleDateString() %> 
+                      </div>
+                      <div class="card-text mb-2">
+                          <%= article.description %> 
+                      </div>
+                      <a href="articles/<%= article.slug %> " class="btn btn-primary">Read More</a>
+                      <a href="articles/edit/<%= article.id %> " class="btn btn-info">Edit</a>
+                      <!-- cant use link tags to delete articles because google clicks all links when indexing -->
+                      <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                      </form> -->
+              </div>
+          </div> 
+          <% }) %>     
+          <br/>
+        </div> 
       </div>
-        <!-- <div class="row mb-2">
-        <div class="col-md-6">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">Europe</strong>
-                <h3 class="mb-0">Prosus more Pros than Cons</h3>
-                <div class="mb-1 text-muted">July 6, 2020</div>
-                <p class="card-text mb-auto">This super child of a South African conglomerate is looking to take over.</p>
-                <a href="/articles/prosus-a-complicated-european-tech-play" class="stretched-link">Continue reading</a>
-            </div>
-            <div class="col-auto d-none d-lg-block db-placeholder2">
-                <img width="200" height="100%" src="https://www.prosus.com/getmedia/61e73d06-aa5b-4b9d-84cf-3f11536424cf/Prosus_Lockup.aspx?width=200&height=200&ext=.jpg" alt="">
-                <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
-            <!-- </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-success">Latin America</strong>
-                <h3 class="mb-0">Free Trade is Free Money</h3>
-                <div class="mb-1 text-muted">Aug 9, 2020</div>
-                <p class="mb-auto">MercadoLibre continues rise in Latin America.</p>
-                <a href="/articles/mercadolibre-a-powerhouse-e-commerce-fintech-player" class="stretched-link">Continue reading</a>
-            </div>
-            <div class="col-auto d-none d-lg-block bd-placeholder">
-                <img width="200" height="100%" class="imgcanna" src="https://assets.entrepreneur.com/images/misc/1584487204_LOGOCODOS_fondoblanco-01.png?width=1000" alt="">
-                <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
-            <!-- </div>
-            </div>
-        </div>
-        </div>
-  </div> -->
-  <div class="mt-2 container border-top">
-    <h1 class="pt-4">Latest Blog Articles</h1>
-    <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
-    <!-- This symbol < % without the = will run the code but not ouput it -->
-    <% articles.forEach(article => { %> 
-    <div class="card mb-2">
-        <div  class="card-body" >
-                <h4 class="card-title"><%= article.title %></h4>
-                <div class="card-subtitle text-muted mb-2">
-                    <%= article.createdAt.toLocaleDateString() %> 
-                </div>
-                <div class="card-text mb-2">
-                    <%= article.description %> 
-                </div>
-                <a href="articles/<%= article.slug %> " class="btn btn-primary">Read More</a>
-                <a href="articles/edit/<%= article.id %> " class="btn btn-info">Edit</a>
-                <!-- cant use link tags to delete articles because google clicks all links when indexing -->
-                <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                <button type="submit" class="btn btn-danger">Delete</button>
-                </form> -->
-        </div>
-    </div> 
-    <% }) %>     
-    <br/>
-  </div> 
+
   <footer style=" margin-top: 3rem; color: rgb(173, 56, 56); border-top: 1px solid rgb(0, 0, 0, .25); padding-top: 2rem; padding-bottom: 1rem; display: flex; justify-content: center;">
     <p> &#169 2020 A Still Life Company &#174 </p>
   </footer> 
