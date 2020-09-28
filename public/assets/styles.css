@@ -74,7 +74,7 @@ nav {
 
 @media screen and (max-width: 950px) {
   body, html{
-    overflow-x: hidden !important;
+    /* overflow-x: hidden !important; */
     /* position: relative;
     width: 100%; */
   }
@@ -85,7 +85,7 @@ nav {
       margin: 0px;
       right: 0px;
       height: 92vh;
-      top: 6vh;
+      top: 7vh;
       background-color: black ;
       display: flex;
       flex-direction: column;
