@@ -80,12 +80,11 @@ nav {
   }
 
   .nav-links{
-    z-index: 10;
     position: absolute;
     z-index: 10;
       margin: 0px;
       right: 0px;
-      height: 92vh;
+      height: 50%;
       top: 6vh;
       background-color: black ;
       display: flex;
