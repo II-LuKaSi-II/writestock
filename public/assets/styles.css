@@ -73,9 +73,12 @@ nav {
 }
 
 @media screen and (max-width: 950px) {
-  .hiddenBody{
-    overflow-x: hidden;
+  body, html{
+    overflow-x: hidden !important;
+    position: relative;
+    width: 100%;
   }
+
   .nav-links{
     z-index: 10;
     position: absolute;
