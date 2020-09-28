@@ -75,8 +75,8 @@ nav {
 @media screen and (max-width: 950px) {
   body, html{
     overflow-x: hidden !important;
-    position: relative;
-    width: 100%;
+    /* position: relative;
+    width: 100%; */
   }
 
   .nav-links{
@@ -84,7 +84,7 @@ nav {
     z-index: 10;
       margin: 0px;
       right: 0px;
-      height: 50%;
+      height: 92vh;
       top: 6vh;
       background-color: black ;
       display: flex;
