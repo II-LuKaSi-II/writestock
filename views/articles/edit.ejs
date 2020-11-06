@@ -1,15 +1,18 @@
-<div class="container">
-  <div class="card-body">
-    <h1 class="mb-4">Edit Article</h1>
+<body style="height: 100%;">
+  <div class="container">
+    <div class="card-body">
+      <h1 class="mb-4">Edit Article</h1>
+  
+      <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
+        <%- include('_form_fields') %>
+      </form>
+      <form class="mt-2" action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+        <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
+      </form>
+    </div>
+  </div>  
+</body>
 
-    <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
-      <%- include('_form_fields') %>
-    </form>
-    <form class="mt-2" action="/articles/<%= article.id %>?_method=DELETE" method="POST">
-      <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
-    </form>
-  </div>
-</div>
 
 
 

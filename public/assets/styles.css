@@ -5,9 +5,9 @@
 
 .body {
   width: 100%;
-  padding: .5rem 1rem;
+  padding: .5rem 2rem;
   margin: auto;
-  max-width: 4000px;
+  max-width: 1750px;
 }
 
 nav {
@@ -18,7 +18,25 @@ nav {
   justify-content: space-between;
   align-items: center;
   min-height: 6vh;
-  background-color: black;
+  color: whitesmoke;
+  background-color: hsl(0, 0%, 10%);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* .articles {
+  max-width: 50%;
+} */
+
+footer {
+  margin: 0rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 3vh;
+  color: whitesmoke;
+  background-color: hsl(0, 0%, 10%);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -85,7 +103,7 @@ nav {
       margin: 0px;
       right: 0px;
       height: 92vh;
-      top: 7vh;
+      top: 6vh;
       background-color: black ;
       display: flex;
       flex-direction: column;
@@ -127,4 +145,7 @@ nav {
 .toggle .line3{
   transform: rotate(45deg) translate(-5px,-6px);
 }
+
+
+
 /*# sourceMappingURL=styles.css.map */
