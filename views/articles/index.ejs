@@ -52,7 +52,7 @@
         <div class="col-md-6 px-0">
             <h1 style="position: relative !important;" class=" display-4">Southeast Asia's Leading Internet Company Poised to Keep Growing</h1>
             <p class="lead  my-3">Uniquely positioned in strategic emerging markets, Singapore's leader in fintech, ecommerce, and gaming is poised to take on glabal leaders in every market.</p>
-            <p class="lead mb-0"><a href="/articles/sea-limited-southeast-asias-leading-internet-company-poised-to-keep-growing" class="text-white font-weight-bold">Continue reading...</a></p>
+            <p class="lead mb-0"><a href="/articles/southeast-asias-leading-internet-company-poised-to-keep-growing" class="text-white font-weight-bold">Continue reading...</a></p>
         </div>
         </div>
         <div class="row mb-2">
@@ -95,8 +95,8 @@
           <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
           <!-- This symbol < % without the = will run the code but not ouput it -->
           <% articles.forEach(article => { %> 
-          <div class="card mb-2">
-              <div  class="card-body">
+          <div style="display:flex; flex-direction: row;" class="card mb-2">
+              <div class="card-body" style="border: 2px red solid; width:60%;">
                 <div class="article-body">
                       <h4 class="card-title"><%= article.title %></h4>
                       <div class="card-subtitle text-muted mb-2">
@@ -112,8 +112,24 @@
                       <button type="submit" class="btn btn-danger">Delete</button>
                       </form> -->
               </div>
-              <div class="price-increase">
-                500%
+            </div>
+            <div class="card-body performance">
+              <div class="buyStock" >
+                <div class="buyButton">
+                  Buy this stock 
+                </div>
+                <div class="chartButton">
+                  Charts
+                </div>
+              </div>
+              <div class="prices" >
+                <div class="publishedPrice">
+                  <div>Published Price</div>
+                </div>
+                <div class="currentPrice">
+                  <!-- add in hover info card for these buttons -->
+                  <div>Current Price</div>
+                </div>  
               </div>
             </div>
           </div> 
