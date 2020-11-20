@@ -12,7 +12,7 @@
 
 nav {
   margin: 0rem;
-  padding: 1rem;
+  padding: 0rem;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -45,7 +45,7 @@ footer {
   text-decoration: none;
   text-transform: uppercase;
   margin-top: .5rem;
-  margin-left: 1rem;
+  margin-left: -1.5rem;
   letter-spacing: 7px;
 } 
  .logo a{
@@ -55,8 +55,8 @@ footer {
 .nav-links {
   margin-top: 1rem;
   display: flex;
-  justify-content: space-around;
-  width: 40%;
+  justify-content: space-between;
+  width: 37rem;
 }
 .nav-links li{
   list-style: none;
@@ -66,7 +66,7 @@ footer {
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .burger {
@@ -90,7 +90,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1200px) {
   body, html{
     /* overflow-x: hidden !important; */
     /* position: relative;
@@ -104,7 +104,7 @@ footer {
       right: 0px;
       height: 92vh;
       top: 6vh;
-      background-color: black ;
+      background-color:hsl(0, 0%, 10%) ;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -117,6 +117,7 @@ footer {
     opacity: 0;
   }
   .burger{
+    margin-right: 10rem;
     display: block;
   }
 }
