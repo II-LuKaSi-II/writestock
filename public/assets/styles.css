@@ -55,8 +55,8 @@ footer {
 .nav-links {
   margin-top: 1rem;
   display: flex;
-  justify-content: space-between;
-  width: 35rem;
+  align-items: flex-end
+  width: 35rem; 
 }
 .nav-links li{
   list-style: none;
@@ -145,6 +145,25 @@ footer {
 } 
 .toggle .line3{
   transform: rotate(45deg) translate(-5px,-6px);
+}
+ .maindiv {
+  display: grid;
+  grid-template-columns: 78% 20%;
+ }
+
+ .origindiv {
+  width: auto;
+ }
+i:hover{
+  transform: scale(1.1);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+h3:hover {
+  transform: scale(1.1);
 }
 
 

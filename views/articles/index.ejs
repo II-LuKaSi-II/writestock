@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link href="/public/assets/styles.css" rel="stylesheet" type="text/css" />
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+  <script src="https://use.fontawesome.com/5b9858c609.js"></script>
   <title>Write Stock</title>
 
 
@@ -61,14 +62,15 @@
             class="text-white font-weight-bold">Continue reading...</a></p>
       </div>
     </div>
-    <div class="row mb-2">
+  </div>  
+    <div style="margin-right: 6rem; margin-left: 6rem;" class="row mb-2">
       <div class="col-md-6">
         <div style="background-color: white;" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-primary">Europe</strong>
             <h3 class="mb-0">The Pros & Cons of Prosus</h3>
             <div class="mb-1 text-muted">7/6/2020</div>
-            <p class="card-text mb-auto">This super cild of South African conglomerate has eyes on the European market.
+            <p class="card-text mb-auto">An interesting spin-off from a South African conglomerate with a complicated structure.
             </p>
             <a href="/articles/prosus-a-complicated-european-tech-play" class="stretched-link">Read More</a>
           </div>
@@ -100,9 +102,28 @@
         </div>
       </div>
     </div>
-
-    <div class=" articles border-top">
-      <h2 class="ml-1 pt-2 pb-1">Recent Articles</h2>
+    <div style="margin-right: 6rem; margin-left: 6rem;" class="row mb-2">
+      <div class="col-md-12">
+        <div style="background-color: rgb(252, 236, 217, .5);" class="row no-gutters border rounded overflow-auto mb-4 shadow-sm h-md-250 maindiv">
+          <div style="overflow: auto;" class="col p-4 d-flex flex-column position-static origindiv">
+            <h2 style="color: rgb(158, 7, 7);" class="mt-1 mb-2">The Origin of Writestock.com</h2>
+            <p style="font-size: 22px;" class="mb-2"><a href="https://aws.amazon.com/solutions/case-studies/crowdstrike/" target="_blank">Writestock.com</a> is the current project of <strong>David Still</strong>, an active investor from New York City with a background in Financial Analysis and a passion for all things FinTech. Having completed and passed all three levels of the <a href="https://aws.amazon.com/solutions/case-studies/crowdstrike/" target="_blank">CFA</a> exam, and having worked in the Finance Industry here and abroad, David brings years of experience and expertise to his writing and analysis. Please reach out to David below:</p>
+            <div style="margin-top: 1.5rem; display: flex; align-items: center; justify-content: center;" class=" mb-auto icons">
+              <a style="color: #BD2C00;" href="https://github.com/davidtstill"><i style="margin-right: 2rem;" class="fab fa-github-square fa-4x"></i></a>
+              <a style="color: #006192 ;" href="https://www.linkedin.com/in/davidtstill/"><i style="margin-right: 2rem;" class="fab fa-linkedin-square fa-4x"></i></a>
+              <a style="color: midnightblue;" href="mailto:writestockblog@gmail.com"><i style="margin-right: 2rem;" class="fas fa-envelope fa-4x"></i></a>
+              <!-- <i class="fas fa-newspaper fa-4x"></i> -->
+            </div>
+            
+          </div>
+            <div style="margin-bottom: 1rem; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img class="headShot shadow-sm" style="margin-top: 1rem; margin-bottom: 1rem;"src="https://imgur.com/G3AUvKL.png" width="75%" alt="David Still Headshot">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-right: 7rem; margin-left: 7rem;" class=" articles border-top">
+      <h2 style="color: rgb(95, 95, 95);" class="ml-1 pt-2 pb-1">Recent Articles</h2>
       <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
       <!-- This symbol < % without the = will run the code but not ouput it -->
       <% articles.forEach(article => { %>
