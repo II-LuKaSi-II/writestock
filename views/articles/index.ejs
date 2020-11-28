@@ -107,7 +107,7 @@
         <div style="background-color: rgb(252, 236, 217, .5);" class="row no-gutters border rounded overflow-auto mb-4 shadow-sm h-md-250 maindiv">
           <div style="overflow: auto;" class="col p-4 d-flex flex-column position-static origindiv">
             <h2 style="color: rgb(38, 37, 107);" class="mt-1 mb-2">The Origin of Writestock.com</h2>
-            <p style="font-size: 22px;" class="mb-2"><a href="https://aws.amazon.com/solutions/case-studies/crowdstrike/" target="_blank">Writestock.com</a> is the current project of <strong>David Still</strong>, an active investor from New York City with a background in Financial Analysis and a passion for all things FinTech. Having completed and passed all three levels of the <a href="https://aws.amazon.com/solutions/case-studies/crowdstrike/" target="_blank">CFA</a> exam, and having worked in the Finance Industry here and abroad, David brings years of experience and expertise to his writing and analysis. Please reach out to David below:</p>
+            <p style="font-size: 22px;" class="mb-2">Writestock.com is the current project of David Still, an active investor from New York City with a background in Financial Analysis and a passion for all things FinTech. Having completed and passed all three levels of the CFA exam, and having worked in the Finance Industry here and abroad, David brings years of experience and expertise to his writing and analysis. Please reach out to David below:</p>
             <div style="margin-top: 1.5rem; display: flex; align-items: center; justify-content: center;" class=" mb-auto icons">
               <a style="color: #BD2C00;" href="https://github.com/davidtstill"><i style="margin-right: 2rem;" class="fab fa-github-square fa-4x"></i></a>
               <a style="color: #006192 ;" href="https://www.linkedin.com/in/davidtstill/"><i style="margin-right: 2rem;" class="fab fa-linkedin-square fa-4x"></i></a>
@@ -127,7 +127,7 @@
       <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
       <!-- This symbol < % without the = will run the code but not ouput it -->
       <% articles.forEach(article => { %>
-      <div style="display:flex; flex-direction: row;" class="card mb-2">
+      <div style="display:flex; flex-direction: row;" class=" art card mb-2">
         <div class="card-body row no-gutters border rounded overflow-hidden flex-md-row shadow-sm h-md-250" style=" width:60%;">
           <div class="article-body">
             <h4 class="card-title"><%= article.title %></h4>
@@ -138,7 +138,7 @@
               <%= article.description %>
             </div>
             <a href="articles/<%= article.slug %> " class="btn btn-dark ">Read More</a>
-            <!-- <a href="articles/edit/<%= article.id %> " class="btn btn-primary">Edit</a> -->
+            <a href="articles/edit/<%= article.id %> " class="btn btn-primary">Edit</a>
             <!-- cant use link tags to delete articles because google clicks all links when indexing -->
             <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
                         <button type="submit" class="btn btn-danger">Delete</button>
