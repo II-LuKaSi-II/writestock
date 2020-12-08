@@ -42,10 +42,13 @@ router.delete('/:id', async (req, res) => {
   res.redirect('/')
 })
 
+// This will be important for adding the logo !!!!
 function saveArticleAndRedirect(path) {
   return async (req, res) => {
     let article = req.article
     article.title = req.body.title
+    article.logopicture = req.body.logopicture
+    article.pricewritten = req.body.pricewritten
     article.description = req.body.description
     article.markdown = req.body.markdown
     try {

@@ -8,12 +8,19 @@ const { JSDOM } = require('jsdom')
 // allows dompurify to create html and purify it by using JSDOM window object 
 const dompurify = createDomPurify(new JSDOM().window)
 
+// Add an spot for image in the schema. use type: Buffer
 const articleSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
     },
     description: {
+        type: String
+    },
+    logopicture: {
+        type: String,
+    },
+    pricewritten: {
         type: String
     },
     markdown: {

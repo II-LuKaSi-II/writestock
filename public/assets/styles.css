@@ -1,7 +1,6 @@
 .articlePic {
-  background-size: cover;
-  background-position: 0rem -14rem;
-  background-image: url(https://images.unsplash.com/photo-1542114740389-9b46fb1e5be7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3578&q=80);
+  width: 100%;
+  background-image: url(https://www.reynaoverseas.com/images/web/singapore-banner.png);
 
 }
 
@@ -57,9 +56,9 @@ footer {
 .nav-links {
   margin-top: 1rem;
   display: flex;
-  align-items: flex-end
-  width: 35rem; 
+  align-items: flex-end;
 }
+
 .nav-links li{
   list-style: none;
 }
@@ -168,5 +167,43 @@ i:hover{
   transform: scale(1.01);
 }
 
+.rightColumn {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
 
+
+/* .stockPriceWritten {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
+
+.stockPriceWritten:empty {
+  display: none;
+  background-color: red;
+}
+
+.stockPriceCurrent {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+} */
+
+.logoPicContainer {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+  margin-right: -2rem;
+}
+
+
+.articleHead {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
 /*# sourceMappingURL=styles.css.map */
