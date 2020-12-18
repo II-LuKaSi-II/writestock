@@ -57,20 +57,20 @@
 <body style="background-color: whitesmoke;">
     <div id="containerBody" class=" row h-25 mt-4 mb-1 ">
       <div id="marginContainer" class="col-md-12 ">
-        <div style="background-color: rgb(252, 236, 217, .65);" class=" mediacard  rounded h-10 mb-4 shadow-lg">
+        <div id="mediaCard1" style="background-color: rgb(252, 236, 217, .65);" class=" mediacard rounded h-10 mb-4 shadow-lg">
           <div id="picContainer">
             <img id="headShot" class="headShot shadow-sm" src="https://imgur.com/8JRAeKw.png" width="220rem" alt="David Still Headshot">
           </div>
           <div id="name" class="col p-4 d-flex flex-column origindiv">
             <h1 id="originHeader" class=" mb-1">David Still</h1>
-            <div style="display: flex; margin-top: -3px; margin-bottom: 4px; flex-direction: row;">
-              <div style="display: flex; flex-direction: row; padding-right: 1rem;">
+            <div  style="width: 120%;  display: flex; margin-top: -3px; margin-bottom: 4px; flex-direction: row;">
+              <div id="FA">
                 <div style="color: gray;"><i class="fas fa-chart-bar mr-1"></i></div>
                 <h6 style="padding-top: 1px; color: gray" class="mr-4">Financial Analyst</h6>
               </div>  
               <div style="display: flex; flex-direction: row;">
                 <div style="color: gray;"><i class="fas fa-globe-americas mr-1"></i></div>
-                <h6 style="padding-top: 2px; color: gray;">New York City</h6>
+                <h6 style=" width: auto;   padding-top: 2px; color: gray;">New York City</h6>
               </div>
             </div>   
             <p style="font-size: 20px; margin-top: -3px;" class=" writeUp mb-1">Writestock.com is the current project of David Still, an active growth investor working in New York City with a passion for deep-dive financial analysis, and a penchant for all things Fintech. Having completed and passed all three levels of the CFA exam, and having worked in Finance here and abroad, David brings his experience and expertise to his writing. Learn more about David <a href="articles/about"> here</a>.</p>
@@ -91,17 +91,6 @@
         </div>
       </div>
     </div>
-    
-    <div id="leadArticle">
-      <div class=" jumbotron p-0 p-md-4 text-white shadow-lg rounded bg-dark border-top articlePic">
-        <div class="col-md-8 px-0">
-          <h1 class=" display-3">The New Kings of Advertising</h1>
-          <p id="leadArticleTitle" class="text-white lead my-2">The largest independent omnichannel sell-side platform in the world is getting bigger - enabling online content providers to monetize their content, and investors to cash to invest in a rapidly expanding market.  </p>
-          <p class="lead mb-0"><a style="text-decoration: none;" href="/articles/southeast-asias-leading-internet-company-poised-to-keep-growing"
-             class="text-white font-weight-bold">Continue reading...</a></p>
-        </div>
-      </div>
-    </div>  
     <!-- <div style="margin-right: 6rem; margin-left: 6rem;" class="row mb-2">
       <div class="col-md-6">
         <div style="background-color: white;" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250">
@@ -140,24 +129,25 @@
           <!-- </div>
         </div>
       </div>
-    </div> --> 
+    </div>  -->
     <div id="recentArticles" class="articles border-top">
       <!-- <h2 style="color: rgb(95, 95, 95);" class="ml-1 pt-2 pb-1">Recent Articles</h2> -->
       <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
       <!-- This symbol < % without the = will run the code but not ouput it -->
       <% articles.forEach(article => { %>
       <div class=" art border rounded shadow-sm card mb-1">
-        <div class="card-body row no-gutters  overflow-hidden flex-md-row  h-md-250" style=" width:60%;">
+        <div class="card-body row no-gutters  overflow-hidden flex-md-row  h-md-250">
           <div class="article-body">
             <h4 class="card-title"><%= article.title %></h4>
-            <div class="card-subtitle text-muted mb-2">
+            <div id="dateColor" style="color: rgba(61, 61, 248, 0.5); " class="card-subtitle mb-2">
               <%= article.createdAt.toLocaleDateString() %>
             </div>
             <div class="card-text mb-2">
               <%= article.description %>
             </div>
             <a href="articles/<%= article.slug %> " class="btn btn-dark ">Read More</a>
-            <a href="articles/edit/<%= article.id %> " class="btn btn-primary">Edit</a>
+            <a href="articles/edit/<%= article.id %> " id="share1" class="btm btn"><i class=" fab fa-twitter-square fa-2x"></i></a>
+            <a href="articles/edit/<%= article.id %> " id="share2" class="btm btn"><i class=" fab fa-linkedin-square fa-2x"></i></a>
             <!-- cant use link tags to delete articles because google clicks all links when indexing -->
             <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -166,8 +156,8 @@
         </div>
         <div  style=" width: 40%;" class="rightColumn">
           <div class="logoPicContainer">
-            <div style="display: flex; align-items: center; justify-content: center;" >
-              <img style="max-height: auto; max-width: 70%; padding: 1rem;" src="<%= article.logopicture %>" alt="Company logo">
+            <div id="rightColumn">
+              <img id="logoPicLogo" src="<%= article.logopicture %>" alt="Company logo">
             </div>
           </div>
           <!-- <div  class="stockPrices">

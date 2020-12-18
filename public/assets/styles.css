@@ -45,7 +45,6 @@
 
 #name {
   font-family: 'Poppins'; 
-  overflow: hidden;
 }
 
 #originHeader {
@@ -67,6 +66,25 @@
   margin-right: 6rem; 
   margin-left: 6rem;
 }
+#rightColumn {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.card-body {
+  width: 60%;
+}
+
+#logoPicLogo {
+  max-height: auto; 
+  max-width: 70%; 
+  padding: 1rem;
+}
+
+#dateColor {
+  color: yellow;
+}
 /* nav {
   margin: 0rem;
   padding: 0rem;
@@ -83,6 +101,22 @@
 /* .articles {
   max-width: 50%;
 } */
+
+#share1 {
+  margin-left: -.5rem;
+  color: rgb( 0, 172, 237)
+}
+
+#share2 {
+  margin-left: -1.75rem;
+  color: rgb(40,103,178);
+}
+
+#FA {
+  display: flex; 
+  flex-direction: row; 
+  padding-right: 1rem;
+}
 
 #writestock {
   z-index: 1; 
@@ -145,19 +179,11 @@ margin-top: -.25rem; margin-right:
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-footer {
-  margin: 0rem;
-  padding: 1rem;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 3vh;
-  color: whitesmoke;
-  background-color: hsl(0, 0%, 10%);
-  font-family: 'Poppins', sans-serif;
+.topBtn {
+  margin-top: .75rem;
+  margin-left: .5rem;
 }
+
 
 .logo {
   color: rgb(232, 232, 232);
@@ -210,11 +236,12 @@ footer {
     width: 60%;
   }
 } */
-.mediacard {
+#mediaCard1 {
   display: grid;
   grid-template-columns: .6fr 3fr .5fr;
   max-height: 100%;
 }
+
 
 .links {
   display: grid;
@@ -289,11 +316,11 @@ footer {
 } */
  .maindiv {
   display: grid;
-  grid-template-columns: 78% 20%;
+  grid-template-columns: 85% 15%;
  }
 
  .origindiv {
-  width: auto;
+  width: 100%;
  }
 
 
@@ -305,18 +332,17 @@ footer {
   text-decoration: none;
 } */
 
-.btn {
+.btm {
   border-radius: 5px;
-  margin-right: 1rem;
+  margin-right: .25rem;
+  align-items: center;
+  margin-left: 0rem;
+  padding-bottom: -1rem;
 }
 
 /* .btn:hover {
   transform: scale(1.1);
 } */
-
-.btn-sm {
-  margin-left: .5rem;
-}
 
 .art {
   transition: all .3s ease-in-out 0s;
@@ -355,13 +381,7 @@ footer {
   height: 50%;
 } */
 
-.logoPicContainer {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  padding-left: 2rem;
-  margin-right: -2rem;
-}
+
 
 
 .articleHead {
@@ -385,7 +405,7 @@ footer {
   transform: scaleX(1.15);
 }
 
-@media all and (max-width: 1536px) {
+@media all and (max-width: 1437px) {
   .wrap { display: none; }
 
   .headShot {
@@ -394,9 +414,7 @@ footer {
   .navbar-nav {
     margin-left: 0;
   }
-  ul {
-    justify-content: flex-start;
-  }
+
 
 }
  .navbar {
@@ -426,6 +444,19 @@ footer {
      margin-right: -1rem;
    }
    
+   .body {
+    width: 100%;
+    padding: 1rem;
+    margin: 0rem;
+    max-width: 1775px;
+  }
+  #mediaCard1 {
+    display: grid;
+    margin-top: -1.25rem;
+    padding-bottom: -5rem;
+    grid-template-columns: .6fr 3fr .5fr;
+    max-height: 100%;
+  }
    #containerBody {
      margin-left: 0rem;
      margin-right: 0rem;
@@ -437,19 +468,64 @@ footer {
    .headShot {
      display: none;
    }
-   .origindiv {
-    margin-left: -3rem;
-    padding-right: -1rem;
-    margin-right: -1rem;
+
+  #originHeader {
+    font-size: 48px; 
+    width: 120%;
+    margin-top: -.25rem; 
+    margin-left: -5px; 
+    padding-bottom: .35rem;
+    color: rgb(38, 37, 107);
   }
   .art {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 0rem;
+    padding-left: 0rem;
   }
+  h6 {
+    width: 120%;
+  }
+
+  #name {
+    font-family: 'Poppins'; 
+    margin-left: -3rem;
+    margin-bottom: -1rem;
+    margin-top: -.5rem;
+    width: 120%;
+  }
+  .writeUp {
+    width: 115%;
+  }
+
+  .card-body {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    width: 100%;
+  }
+
   #recentArticles {
     margin-right: 0rem; 
     margin-left: 0rem;
   }
+  #rightColumn {
+    display: none;
+  }
+  #FA {
+    display: flex; 
+    flex-direction: row; 
+    padding-right: 0rem;
+  }
+  
+
+  #logoPicLogo {
+    display: none;
+  }
+  #share {
+    padding: 0;
+    margin-left: 0;
+  }
+
  }
 /*# sourceMappingURL=styles.css.map */
