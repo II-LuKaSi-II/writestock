@@ -1,17 +1,73 @@
 .articlePic {
   width: 100%;
   background-image: url(https://www.reynaoverseas.com/images/web/singapore-banner.png);
-
 }
 
 .body {
   width: 100%;
   padding: .5rem 2rem;
   margin: auto;
-  max-width: 1750px;
+  max-width: 1775px;
 }
 
-nav {
+#containerBody {
+  padding-left: 0rem; 
+  padding-right: 0rem; 
+  margin-right: 6rem; 
+  margin-left: 6rem;
+}
+
+#linkyLinks {
+  background-color: black; 
+  margin-top: -1rem; 
+  margin-left: 7rem;
+}
+#portfolioIcon {
+  color: rgba(255, 255, 255, 0.747);
+  margin-top: -3px; 
+  margin-right: -1.5rem;
+}
+
+#marginContainer {
+  padding-left: 0rem; 
+  padding-right: 0rem; 
+  margin-left: 0rem; 
+  margin-right: 0rem;
+}
+
+#picContainer {
+  max-height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+}
+
+#name {
+  font-family: 'Poppins'; 
+  overflow: hidden;
+}
+
+#originHeader {
+  font-size: 50px; 
+  margin-top: -.5rem; 
+  margin-left: -5px; 
+  color: rgb(38, 37, 107);
+}
+#leadArticle {
+  padding-left: 0rem; 
+  padding-right: 0rem; 
+  margin-right: 6rem; 
+  margin-left: 6rem;
+}
+#leadArticleTitle {
+  font-size: 25px;
+}
+#recentArticles {
+  margin-right: 6rem; 
+  margin-left: 6rem;
+}
+/* nav {
   margin: 0rem;
   padding: 0rem;
   box-sizing: border-box;
@@ -22,11 +78,73 @@ nav {
   color: whitesmoke;
   background-color: hsl(0, 0%, 10%);
   font-family: 'Poppins', sans-serif;
-}
+} */
 
 /* .articles {
   max-width: 50%;
 } */
+
+#writestock {
+  z-index: 1; 
+background-color: black; 
+margin-top: -.25rem; margin-right: 
+7rem; margin-left: 7rem
+}
+
+
+
+.nav-link {
+  font-size: 14px;
+}
+
+.mainbtn {
+  font-size: 12px;
+}
+
+.search {
+  margin-left: 0rem;
+  margin-top: .5rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid black;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: black
+}
+
+.searchTerm:focus{
+  color: black
+}
+
+.searchButton {
+  margin-top: 3px;
+  width: 40px;
+  height: 32px;
+  background:white;
+  border-top: black;
+  text-align: center;
+  color: black;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 footer {
   margin: 0rem;
@@ -51,13 +169,15 @@ footer {
 } 
  .logo a{
    text-decoration: none;
+   justify-content: space-between;
  }
 
-.nav-links {
+/* .nav-links {
   margin-top: 1rem;
   display: flex;
   align-items: flex-end;
-}
+  padding-right: 9rem;
+} 
 
 .nav-links li{
   list-style: none;
@@ -68,9 +188,9 @@ footer {
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 12px;
-}
+} */
 
-.burger {
+/* .burger {
   display: none;
   cursor: pointer;
 }
@@ -80,25 +200,45 @@ footer {
   background-color:  rgb(235, 235, 235) ;
   margin: 5px;
   transition: all 0.3s ease;
-}
+} */
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .nav-links {
     margin-top: 1rem;
     display: flex;
     justify-content: space-around;
     width: 60%;
   }
+} */
+.mediacard {
+  display: grid;
+  grid-template-columns: .6fr 3fr .5fr;
+  max-height: 100%;
 }
 
+.links {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  margin: 0rem;
+  padding: 0rem;
+}
+
+.socialmedialink {
+  display: flex;
+}
+
+
+
+/* 
 @media screen and (max-width: 1200px) {
   body, html{
     /* overflow-x: hidden !important; */
     /* position: relative;
-    width: 100%; */
-  }
+    width: 100%; 
+  } */
 
-  .nav-links{
+  /* .nav-links{
     position: absolute;
     z-index: 10;
       margin: 0px;
@@ -121,8 +261,8 @@ footer {
     margin-right: 10rem;
     display: block;
   }
-}
-
+} */
+/* 
 .nav-active{
   transform: translateX(0%);
 }
@@ -136,8 +276,8 @@ footer {
     opacity: 1;
     transform:  translateX(0px);
   }
-}
-
+} */
+/* 
 .toggle .line1{
   transform: rotate(-45deg) translate(-5px,6px);
 }
@@ -146,7 +286,7 @@ footer {
 } 
 .toggle .line3{
   transform: rotate(45deg) translate(-5px,-6px);
-}
+} */
  .maindiv {
   display: grid;
   grid-template-columns: 78% 20%;
@@ -155,16 +295,38 @@ footer {
  .origindiv {
   width: auto;
  }
-i:hover{
-  transform: scale(1.1);
+
+
+
+/* .links:hover{
+  z-index: 1;
+  overflow: hidden;
+  transform: scaleX(1.5);
+  text-decoration: none;
+} */
+
+.btn {
+  border-radius: 5px;
+  margin-right: 1rem;
 }
 
-.btn:hover {
+/* .btn:hover {
   transform: scale(1.1);
+} */
+
+.btn-sm {
+  margin-left: .5rem;
+}
+
+.art {
+  transition: all .3s ease-in-out 0s;
+  display:flex; 
+  flex-direction: row; 
+  min-height: 12rem;
 }
 
 .art:hover {
-  transform: scale(1.01);
+  transform: scale(1.03);
 }
 
 .rightColumn {
@@ -206,4 +368,88 @@ i:hover{
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
+
+.a1 {
+  display: flex;
+  overflow: visible;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: .5s ease-in-out 0s;
+}
+
+ .a1:hover {
+  -ms-transform: scaleX(1.2); /* IE 9 */
+  -webkit-transform: scaleX(1.2); /* Chrome, Safari, Opera */
+  transform: scaleX(1.15);
+}
+
+@media all and (max-width: 1536px) {
+  .wrap { display: none; }
+
+  .headShot {
+    margin-left: 1rem;
+  }
+  .navbar-nav {
+    margin-left: 0;
+  }
+  ul {
+    justify-content: flex-start;
+  }
+
+}
+ .navbar {
+   font-family: Poppins;
+ }
+
+ @media all and (max-width: 980px) {
+   .social {
+      display: none;
+   }
+
+   #writestock {
+     margin-left: 0;
+     margin-right: 0;
+     margin-bottom: -.75rem;
+   }
+
+   #linkyLinks {
+    background-color: black; 
+    margin-top: 0; 
+    margin-left: 0;
+  }
+
+   #portfolioIcon {
+     color: rgba(255, 255, 255, 0.747);
+     margin-top: -3px; 
+     margin-right: -1rem;
+   }
+   
+   #containerBody {
+     margin-left: 0rem;
+     margin-right: 0rem;
+}
+   #leadArticle {
+     margin-left: 0rem;
+     margin-right: 0rem;
+}
+   .headShot {
+     display: none;
+   }
+   .origindiv {
+    margin-left: -3rem;
+    padding-right: -1rem;
+    margin-right: -1rem;
+  }
+  .art {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #recentArticles {
+    margin-right: 0rem; 
+    margin-left: 0rem;
+  }
+ }
 /*# sourceMappingURL=styles.css.map */

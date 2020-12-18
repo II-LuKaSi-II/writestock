@@ -8,6 +8,10 @@
   <meta name="author" content="Lucas Bennett">
   <meta name="generator" content="Jekyll v4.0.1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap" rel="stylesheet">
   <link href="/public/assets/styles.css" rel="stylesheet" type="text/css" />
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
   <script src="https://use.fontawesome.com/5b9858c609.js"></script>
@@ -51,35 +55,50 @@
 </head>
 
 <body style="background-color: whitesmoke;">
-    <div style="margin-right: 6rem; margin-left: 6rem;" class="row mt-4 mb-2">
-      <div class="col-md-12">
-        <div style="background-color: rgb(252, 236, 217, .5);" class="row no-gutters border rounded overflow-auto mb-4 shadow-sm h-md-250 maindiv">
-          <div style="overflow: auto;" class="col p-4 d-flex flex-column position-static origindiv">
-            <h2 style="color: rgb(38, 37, 107);" class="mt-1 mb-2">The Origin of Writestock.com</h2>
-            <p style="font-size: 22px;" class="mb-2">Writestock.com is the current project of David Still, an active investor from New York City with a background in Financial Analysis and a passion for all things FinTech. Having completed and passed all three levels of the CFA exam, and having worked in the Finance Industry here and abroad, David brings years of experience and expertise to his writing and analysis. Please reach out to David below:</p>
-            <div style="margin-top: 1.5rem; display: flex; align-items: center; justify-content: center;" class=" mb-auto icons">
-              <a style="color: #BD2C00;" href="https://github.com/davidtstill"><i style="margin-right: 2rem;" class="fab fa-github-square fa-4x"></i></a>
-              <a style="color: #006192 ;" href="https://www.linkedin.com/in/davidtstill/"><i style="margin-right: 2rem;" class="fab fa-linkedin-square fa-4x"></i></a>
-              <a style="color: midnightblue;" href="mailto:writestockblog@gmail.com"><i style="margin-right: 2rem;" class="fas fa-envelope fa-4x"></i></a>
-              <!-- <i class="fas fa-newspaper fa-4x"></i> -->
-            </div>
-            
+    <div id="containerBody" class=" row h-25 mt-4 mb-1 ">
+      <div id="marginContainer" class="col-md-12 ">
+        <div style="background-color: rgb(252, 236, 217, .65);" class=" mediacard  rounded h-10 mb-4 shadow-lg">
+          <div id="picContainer">
+            <img id="headShot" class="headShot shadow-sm" src="https://imgur.com/8JRAeKw.png" width="220rem" alt="David Still Headshot">
           </div>
-            <div style="margin-bottom: 1rem; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-              <img class="headShot shadow-sm" style="margin-top: 1rem; margin-bottom: 1rem;"src="https://imgur.com/8JRAeKw.png" width="70%" alt="David Still Headshot">
+          <div id="name" class="col p-4 d-flex flex-column origindiv">
+            <h1 id="originHeader" class=" mb-1">David Still</h1>
+            <div style="display: flex; margin-top: -3px; margin-bottom: 4px; flex-direction: row;">
+              <div style="display: flex; flex-direction: row; padding-right: 1rem;">
+                <div style="color: gray;"><i class="fas fa-chart-bar mr-1"></i></div>
+                <h6 style="padding-top: 1px; color: gray" class="mr-4">Financial Analyst</h6>
+              </div>  
+              <div style="display: flex; flex-direction: row;">
+                <div style="color: gray;"><i class="fas fa-globe-americas mr-1"></i></div>
+                <h6 style="padding-top: 2px; color: gray;">New York City</h6>
+              </div>
+            </div>   
+            <p style="font-size: 20px; margin-top: -3px;" class=" writeUp mb-1">Writestock.com is the current project of David Still, an active growth investor working in New York City with a passion for deep-dive financial analysis, and a penchant for all things Fintech. Having completed and passed all three levels of the CFA exam, and having worked in Finance here and abroad, David brings his experience and expertise to his writing. Learn more about David <a href="articles/about"> here</a>.</p>
+          </div>
+          <div  class="links">
+            <div style="text-decoration: none;" class="rounded h-10 shadow-sm socialmedialink"><a  class="a1" style=" text-decoration: none; background-color: rgb(10, 102, 194,.75) ; width:100%; color: rgb(255,255,255,0.75);  " href="https://www.linkedin.com/in/davidtstill/"><i  class="fab fa-linkedin fa-3x"></i></a></div>
+            <div class="rounded h-10 shadow-sm socialmedialink"><a class="a1" style=" text-decoration: none; background-color: rgb(189, 44, 0, .75) ; width:100%; color: rgb(255,255,255,0.75);  " href="https://github.com/davidtstill"><i  class="fab fa-github fa-3x"></i></a></div>
+            <div class="rounded h-10 shadow-sm socialmedialink"><a class="a1" style=" text-decoration: none; background-color: rgb(29, 161 ,242, .75); width:100%; color: rgb(255,255,255,0.75);  " href="https://twitter.com/writestock"><i  class="fab fa-twitter fa-3x"></i></a></div>
+            <div class="rounded h-10 shadow-sm socialmedialink"><a class="a1" style=" text-decoration: none; background-color: rgb(187, 0, 27, .75); width:100%; color: rgb(255,255,255,0.75); " href="mailto:writestockblog@gmail.com"><i  class="far fa-envelope fa-3x"></i></a></div>
+            
+            <!-- <div style=" width: 100%; color: #BD2C00; border: #BD2C00 1px solid;"> 
+              
+            </div> 
+              
+              
+               -->
           </div>
         </div>
       </div>
     </div>
-    <div style="margin-right: 7rem; margin-left: 7rem;">
-      <div class="jumbotron p-0 p-md-4 text-white rounded bg-dark border-top articlePic">
+    
+    <div id="leadArticle">
+      <div class=" jumbotron p-0 p-md-4 text-white shadow-lg rounded bg-dark border-top articlePic">
         <div class="col-md-8 px-0">
-          <h1 class=" display-4">Southeast Asia's Leading Internet Company Poised to
-            Keep Growing</h1>
-          <p style="font-size: 25px;" class="lead my-2">Uniquely positioned in strategic emerging markets, Singapore's leader in FinTech, ecommerce,
-            and gaming is poised to take on glabal leaders in every market.</p>
-          <p class="lead mb-0"><a href="/articles/southeast-asias-leading-internet-company-poised-to-keep-growing"
-              class="text-white font-weight-bold">Continue reading...</a></p>
+          <h1 class=" display-3">The New Kings of Advertising</h1>
+          <p id="leadArticleTitle" class="text-white lead my-2">The largest independent omnichannel sell-side platform in the world is getting bigger - enabling online content providers to monetize their content, and investors to cash to invest in a rapidly expanding market.  </p>
+          <p class="lead mb-0"><a style="text-decoration: none;" href="/articles/southeast-asias-leading-internet-company-poised-to-keep-growing"
+             class="text-white font-weight-bold">Continue reading...</a></p>
         </div>
       </div>
     </div>  
@@ -97,7 +116,7 @@
           <div class="col-auto d-lg-block">
             <img width="60%" height="auto"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Prosus_logo.svg/1200px-Prosus_logo.svg.png"
-              alt="">
+              alt=""> -->
             <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
           <!-- </div>
         </div>
@@ -122,12 +141,12 @@
         </div>
       </div>
     </div> --> 
-    <div style="margin-right: 7rem; margin-left: 7rem;" class=" articles border-top">
+    <div id="recentArticles" class="articles border-top">
       <!-- <h2 style="color: rgb(95, 95, 95);" class="ml-1 pt-2 pb-1">Recent Articles</h2> -->
       <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
       <!-- This symbol < % without the = will run the code but not ouput it -->
       <% articles.forEach(article => { %>
-      <div style="display:flex; flex-direction: row; min-height: 12rem;" class=" art border rounded shadow-sm card mb-1">
+      <div class=" art border rounded shadow-sm card mb-1">
         <div class="card-body row no-gutters  overflow-hidden flex-md-row  h-md-250" style=" width:60%;">
           <div class="article-body">
             <h4 class="card-title"><%= article.title %></h4>
@@ -181,7 +200,5 @@
       <br />
     </div>
   </div>
-
-
 </body>
 </html>
