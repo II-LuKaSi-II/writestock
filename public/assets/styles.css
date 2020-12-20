@@ -118,6 +118,10 @@
   padding-right: 1rem;
 }
 
+#logo2 {
+  display: none;
+}
+
 #writestock {
   z-index: 1; 
 background-color: black; 
@@ -525,6 +529,10 @@ margin-top: -.25rem; margin-right:
   #share {
     padding: 0;
     margin-left: 0;
+  }
+
+  #logo2 {
+    display: flex;
   }
 
  }
