@@ -46,17 +46,17 @@
     <!-- <link href="blog.css" rel="stylesheet"> -->
   </head>
 <body style="background-color: white;">
-  <div style=" margin: 2.5rem 16.5rem 1.5rem 16.5rem; background-color: white;"   >
-   <div style="border-bottom: 1px solid black" class="articleHead">
+  <div id="showContainer">
+   <div class="articleHead">
     <div>
-        <h1 style= "font-size: 45px;" class="mb-1"><%= article.title %></h1>
-        <div style="margin-top: 1rem; padding-bottom: 1rem; display: flex;" >
+        <h1 id="articleTitle"><%= article.title %></h1>
+        <div id="dateCreated" >
           <%= article.createdAt.toLocaleDateString() %> 
-          <div style="color: cornflowerblue; margin-left: 7.5px;"> David Still</div>
+          <div id="authorName"> David Still</div>
         </div>
       </div>
-      <div style=" display: grid; justify-content: center; align-items: center;">
-        <img style=" padding-right: 2rem; margin-left: 2rem; margin-top: -2rem; max-height: 10rem; max-width: 100%;" src="<%= article.logopicture %>" alt="Girl in a jacket">
+      <div id="logoContainer">
+        <img id="logoPicHeader" src="<%= article.logopicture %>" alt="Girl in a jacket">
       </div>
    </div>
     <div>

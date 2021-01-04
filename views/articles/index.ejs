@@ -55,15 +55,15 @@
 </head>
 
 <body style="background-color: whitesmoke;">
-    <div id="containerBody" class=" row h-25 mt-4 mb-1 ">
+    <div id="containerBody" class=" row mt-4 mb-1 ">
       <div id="marginContainer" class="col-md-12 ">
-        <div id="mediaCard1" style="background-color: rgb(252, 236, 217, .65);" class=" mediacard rounded h-10 mb-4 shadow-lg">
+        <div id="mediaCard1" style="background-color: rgb(252, 236, 217, .65);" class=" mediacard rounded mb-4 shadow-lg">
           <div id="picContainer">
-            <img id="headShot" class="headShot shadow-sm" src="https://images.unsplash.com/photo-1527630941-4a229fd674ab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=904&q=80" width="220rem" alt="David Still Headshot">
+            <img id="headShot" class="headShot shadow-sm" src="https://images.unsplash.com/photo-1527630941-4a229fd674ab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=904&q=80" width="155rem" alt="David Still Headshot">
           </div>
           <div id="name" class="col p-4 d-flex flex-column origindiv">
-            <h1 id="originHeader" class=" mb-1">ANONYMOUS</h1>
-            <div  style="width: 120%;  display: flex; margin-top: -3px; margin-bottom: 4px; flex-direction: row;">
+            <h3 id="originHeader" class=" mb-1">Origin Story</h3>
+            <div id="card">
               <div id="FA">
                 <div style="color: gray;"><i class="fas fa-chart-bar mr-1"></i></div>
                 <h6 style="padding-top: 1px; color: gray" class="mr-4">Financial Analyst</h6>
@@ -150,12 +150,12 @@
             </div>
             <a href="articles/<%= article.slug %> " class="btn btn-dark ">Read More</a>
             <!-- <a href="articles/edit/<%= article.id %> " id="share1" class="btm btn"><i class=" fab fa-twitter-square fa-2x"></i></a> -->
-            <a href="articles/edit/<%= article.id %> " class="btn-primary btn">Edit</a>
+           
             
             <!-- cant use link tags to delete articles because google clicks all links when indexing -->
             <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                        </form> -->
+                        <button type="submit" class="btn btn-danger">Delete</button> -->
+                        </form>
           </div>
         </div>
         <div  style=" width: 40%;" class="rightColumn">

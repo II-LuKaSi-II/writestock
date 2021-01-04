@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 const Article = require('./models/article')
 //this is how you access the router from the aticles.js router
 const articleRouter = require('./routes/articles')
+const homeRouter = require('./routes/home')
 //this is to use other methods besdies get post
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
@@ -84,11 +85,32 @@ app.get('/', async (req, res) => {
     res.render('articles/index', { articles: articles })
 })
 
+app.get('/articles/about', async (req, res) => { 
+    const articles = await Article.find().sort({createdAt: 'desc'})
+
+    //here we render the ejs/html. after render is the ('path'),
+    // which in this case is the index page/home page
+    //pass from server an object into render to be available to be output on path page
+    //passing articles variable to index path
+    res.render('articles/about', { articles: articles })
+})
+
+app.get('/home/dashboard', async (req, res) => { 
+    const articles = await Article.find().sort({createdAt: 'desc'})
+
+    //here we render the ejs/html. after render is the ('path'),
+    // which in this case is the index page/home page
+    //pass from server an object into render to be available to be output on path page
+    //passing articles variable to index path
+    res.render('dashboard', { articles: articles })
+})
+
 //tells app to use the article router. this /articles makes it so router is only used after / articles. Way to separate routers
 
 
 // Routes
-app.use('/home', require('./routes/home'))
+
+app.use('/home', homeRouter)
 app.use('/users', require('./routes/users'))
 app.use('/subscribers', require('./routes/subscribers'))
 app.use('/articles', articleRouter)

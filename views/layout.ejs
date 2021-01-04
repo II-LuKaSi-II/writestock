@@ -12,41 +12,42 @@
         <title>Write • Stock</title>
     </head>
 <body >
-    <div style="display: flex; flex-direction: column; justify-content: center;">
-        <div style="justify-content: center; width: 100%; background-color: black;" >
+    <div id="navBody">
+        <div id="navBackground">
             <nav id="writestock" class="navbar navbar-expand-lg navbar-dark">
-                <a style=" letter-spacing: 4px; font-size: 25px; margin-top: .25rem;"  href="/" class='navbar-brand'>WRITE•STOCK</a>
-                <div class="brandlinks" style=" display: flex; align-items: center; justify-content: flex-end; margin-bottom: -.5rem;">
-                    <div style="color: rgba(255, 255, 255, 0.747);"><i class=" social fab fa-twitter-square fa-1.5x" "></i></div>
-                    <div style="color: rgba(255, 255, 255, 0.747); margin-left: .5rem;"><i class=" social fab fa-linkedin-square fa-1.5x"></i></div>
-                    <div style="color: rgba(255, 255, 255, 0.747); margin-left: .5rem;"><i class=" social fab fa-github-square fa-1.5x"></i></div>
+                <a id="homeLink" href="/" class='navbar-brand'>WRITE•STOCK</a>
+                <div id="brandLinks">
+                    <div class="brandLinks"><i class=" social fab fa-twitter-square" "></i></div>
+                    <div class="brandLinks"><i class=" social fab fa-linkedin-square"></i></div>
+                    <div class="brandLinks"><i class=" social fab fa-github-square"></i></div>
                 </div>
-                <button style="margin-bottom: -.5rem;" class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-                    <span style="margin-top: -.2rem;" class="navbar-toggler-icon"></span>
+                <button id="hamburgerButton" class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarMenu" style=" border: none;">
+                <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav ml-auto">
-                        <div class="wrap">
+                        <!-- This is the search bar  -->
+                        <!-- <div class="wrap">
                             <div class="search">
                                <input style="font-size: 15px;" type="text" class="searchTerm" placeholder="This doesn't work yet">
                                <button type="submit" class="searchButton">
                                  <i class="fa fa-search"></i>
                               </button>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="topBtn">
                             <li class=" btn-sm btn-dark">
-                                <a href="#" class="nav-link mainbtn " style=" color: white; padding: .15rem;">Log In</a>
+                                <a href="/users/login" class="mainbtn">Log In</a>
                             </li>
                         </div>
                         <div class="topBtn">
                             <li class=" btn-sm btn-primary">
-                                <a href="#" class="nav-link mainbtn " style="color: white; padding: .15rem;">Subscribe</a>
+                                <a href="/subscribers/subscribe" class="mainbtn ">Subscribe</a>
                             </li>
                         </div>
                         <div class="topBtn">
                             <li class=" btn-sm btn-success">
-                                <a href="#" class="nav-link mainbtn " style="color: white; padding: .15rem ">Contact</a>
+                                <a href="#" class="mainbtn ">Contact</a>
                             </li>
                         </div>
                     </ul>
@@ -54,33 +55,33 @@
             </nav>
         </div> 
 
-        <div style="background-color: black;">
+        <div id="navBackground">
             <nav id="linkyLinks" class=" sublinks navbar navbar-expand-lg navbar-dark">
-                <div class="collapse navbar-collapse" id="navbarMenu" style="border: none;">
-                    <ul class="navbar-nav" style=" justify-content: flex-start; margin-bottom: -1rem;">
+                <div class="collapse navbar-collapse">
+                    <ul id="linkList" class="navbar-nav">
 
                         <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                             <div id="portfolioIcon"><i  style="color: rgb(110, 221, 110);" class=" fas fa-chart-pie"></i></div>
-                            <li class="btn" style="padding-right: 0rem;" >
-                                <a href="#" class="nav-link" style="color: rgb(201, 198, 198); margin-left: .5rem; ">Company Analysis</a>
+                            <li class="btn" >
+                                <a href="#" class="nav-link">Company Analysis</a>
                             </li>
                         </div>
                         <!-- <div style="display: flex; flex-direction: row;justify-content: flex-start; align-items: center;">
                             <div style="color: rgba(255, 255, 255, 0.747);margin-top: -3px; margin-right: -1.5rem;"><i class="fab fa-github-square"></i></div> -->
-                            <li class="btn" style="padding-right: 0rem;" >
-                                <a  href="#" class="nav-link" style="margin-left: .5rem; color: rgb(201, 198, 198); ">Earnings Reviews</a>
+                            <li class="btn" >
+                                <a  href="#" class="nav-link">Earnings Reviews</a>
                             </li>
                         <!-- </div> -->
                         <!-- <div style="display: flex; flex-direction: row;justify-content: flex-start; align-items: center;">
                             <div style="color: rgba(255, 255, 255, 0.747);margin-top: -3px; margin-right: -1.5rem;"><i class="fab fa-github-square"></i></div> -->
-                            <li class="btn" style="padding-right: 0rem;" >
-                                <a href="#" class="nav-link" style="color: rgb(201, 198, 198); margin-left: .5rem; ">Sources of Inspiration</a>
+                            <li class="btn" >
+                                <a href="#" class="nav-link">Sources of Inspiration</a>
                             </li>
                         <!-- </div> -->
                         <!-- <div style="display: flex; flex-direction: row;justify-content: flex-start; align-items: center;">
                             <div style="color: rgba(255, 255, 255, 0.747);margin-top: -3px; margin-right: -1.5rem;"><i class="fab fa-github-square"></i></div> -->
-                            <li class="btn" style="padding-right: 0rem;" >
-                                <a href="#" class="nav-link" style="color: rgb(201, 198, 198); margin-left: .5rem; ">About the Author</a>
+                            <li class="btn">
+                                <a href="#" class="nav-link">About the Author</a>
                             </li>
                         <!-- </div> -->
                         <!-- <div style="display: flex; flex-direction: row;justify-content: flex-start; align-items: center;">
