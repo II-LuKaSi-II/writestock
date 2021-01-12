@@ -7,17 +7,18 @@
   justify-content: center;
 }
 
-#navBackground {
-  justify-content: center; 
+#navBackground2 {
+  display: flex;
+  justify-content: flex-start; 
   width: 100%; 
   background-color: black;
 }
 
 #writestock {
-  z-index: 1; 
+z-index: 1; 
 background-color: black; 
-margin-right: 7rem; 
-margin-left: 7rem
+margin-right: 15.5rem; 
+margin-left: 15.5rem
 }
 
 #homeLink {
@@ -53,7 +54,6 @@ margin-left: 7rem
   text-decoration: none;
 }
 
-
 .mainbtn {
   font-size: 12px;
   color: white; 
@@ -68,36 +68,38 @@ margin-left: 7rem
 }
 
 .nav-link {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 300;
   color:white; 
-  margin-left: .5rem; 
+  margin-left: -1.25rem;
+  margin-right: 5rem;
 }
 
 
 #linkyLinks {
   background-color: black; 
-  margin-left: 7rem;
 }
 
  #linkList {
-  justify-content: flex-start; 
-  margin-top: -1rem; 
+  margin-left: 15.5rem;
+  margin-top: 1rem;
   margin-bottom: -1rem;
+
+ }
+
+ #ER {
+  margin-right: 5rem;
+  margin-left: 3rem;
+
  }
 
 .body {
   width: 100%;
-  padding: .5rem 2rem;
   margin: auto;
-  max-width: 1775px;
+  max-width: 2500px;
 }
 
-#containerBody {
-  padding-left: 0rem; 
-  padding-right: 0rem; 
-  margin-right: 6rem; 
-  margin-left: 6rem;
-}
+
 
 #portfolioIcon {
   color: rgba(255, 255, 255, 0.747);
@@ -149,8 +151,8 @@ margin-left: 7rem
   font-size: 25px;
 }
 #recentArticles {
-  margin-right: 6rem; 
-  margin-left: 6rem;
+  margin-right: 16.5rem; 
+  margin-left: 16.5rem;
 }
 #rightColumn {
   display: flex; 
@@ -168,8 +170,38 @@ margin-left: 7rem
   padding: 1rem 0rem 1rem 1rem;
 }
 
+#articleType {
+  font-size: 15;
+  font-weight: 600;
+  color: rgb(3, 180, 3);
+}
+
+#articleTagsLine {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.5rem;
+}
+
+.tags {
+  padding: 0px .5rem 1px .5rem;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-right: .3rem;
+  margin-bottom: .5rem;
+  font-weight: 300;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tags:hover {
+  text-decoration: none;
+}
+
 #dateColor {
-  color: yellow;
+  color: maroon;
+  display: flex;
+  flex-direction: row;
+  font: 8px;
 }
 /* nav {
   margin: 0rem;
@@ -311,7 +343,7 @@ margin-left: 7rem
 } */
 #mediaCard1 {
   display: grid;
-  grid-template-columns: .4fr 3fr .4fr;
+  grid-template-columns: 3fr .4fr;
   max-height: 100%;
 }
 
@@ -319,7 +351,7 @@ margin-left: 7rem
 .links {
   display: grid;
   height: 100%;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   margin: 0rem;
   padding: 0rem;
 }
@@ -414,17 +446,19 @@ margin-left: 7rem
   padding-bottom: -1rem;
 }
 
+.indexbtn {
+  margin-top: .25rem;
+}
 
 .art {
   transition: all .3s ease-in-out 0s;
   display:flex; 
   flex-direction: row; 
   min-height: 12rem;
+  transition: .5s ease-in-out 0s;
 }
 
-.art:hover {
-  transform: scale(1.03);
-}
+
 
 .rightColumn {
   display: grid;
@@ -456,7 +490,7 @@ margin-left: 7rem
 /* Individual Article Pages  */
 
 #showContainer {
-  margin: 2rem 16.5rem 1.5rem 16.5rem; 
+  margin: 3rem 16.5rem 1.5rem 16.5rem; 
   background-color: white;
 }
 
@@ -467,19 +501,39 @@ margin-left: 7rem
 }
 
 #articleTitle {
-  font-size: 45px;
+  font-size: 55px;
+  margin-left: -1.5px;
 }
 
 #dateCreated {
-  margin-top: 1rem; 
-  padding-bottom: 1rem; 
   display: flex;
+  flex-direction: column;
+  margin-top: -.25rem;
+  margin-left: .25rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(67, 99, 160); 
 }
 
 #authorName {
-  color: cornflowerblue; 
-  margin-left: 7.5px;
+  color: rgb(67, 99, 160); 
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: .25rem;
+
 }
+
+#authorName2 {
+  color: black; 
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: -.25rem;
+  padding-right: -.25rem;
+  
+
+}
+
+/* #dateDate */
 
 #logoContainer {
   display: grid; 
@@ -488,10 +542,10 @@ margin-left: 7rem
 }
 
 #logoPicHeader {
-  padding-right: 2rem; 
+  padding: 1.25rem; 
   margin-left: 2rem; 
-  margin-top: -2rem; 
-  max-height: 9rem; 
+  margin-top: -1rem; 
+  max-height: 10rem; 
   max-width: 100%;
 }
 
@@ -547,7 +601,7 @@ margin-left: 7rem
    }
 
    #writestock {
-     margin-left: 0;
+     padding-left: -10px;
      margin-right: 0;
      margin-bottom: -.75rem;
    }
@@ -633,10 +687,7 @@ margin-left: 7rem
     grid-template-columns: .6fr 3fr .5fr;
   }
 
-  #recentArticles {
-    margin-right: 0rem; 
-    margin-left: 0rem;
-  }
+
   #rightColumn {
     display: none;
   }

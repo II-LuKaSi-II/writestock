@@ -14,6 +14,7 @@ const methodOverride = require('method-override')
 const flash = require('connect-flash')
 const session = require('express-session')
 const passport = require('passport')
+const { ensureAuthenticated } = require('./config/auth')
 
 const app = express()
 
@@ -83,27 +84,94 @@ app.get('/', async (req, res) => {
     //pass from server an object into render to be available to be output on path page
     //passing articles variable to index path
     res.render('articles/index', { articles: articles })
-})
+});
 
-app.get('/articles/about', async (req, res) => { 
+// app.get('/articles/about', async (req, res) => { 
+//     const articles = await Article.find().sort({createdAt: 'desc'})
+
+//     //here we render the ejs/html. after render is the ('path'),
+//     // which in this case is the index page/home page
+//     //pass from server an object into render to be available to be output on path page
+//     //passing articles variable to index path
+//     res.render('articles/about', { articles: articles })
+// });
+
+app.get('/companyanalysis', async (req, res) => { 
     const articles = await Article.find().sort({createdAt: 'desc'})
 
     //here we render the ejs/html. after render is the ('path'),
     // which in this case is the index page/home page
     //pass from server an object into render to be available to be output on path page
     //passing articles variable to index path
-    res.render('articles/about', { articles: articles })
-})
+    res.render('companyanalysis', { 
+        articles: articles
+    })
+});
 
-app.get('/home/dashboard', async (req, res) => { 
+app.get('/earningsreviews', async (req, res) => { 
     const articles = await Article.find().sort({createdAt: 'desc'})
 
     //here we render the ejs/html. after render is the ('path'),
     // which in this case is the index page/home page
     //pass from server an object into render to be available to be output on path page
     //passing articles variable to index path
-    res.render('dashboard', { articles: articles })
+    res.render('earningsreviews', { 
+        articles: articles
+    })
+});
+
+app.get('/sectors', async (req, res) => { 
+    const articles = await Article.find().sort({createdAt: 'desc'})
+
+    //here we render the ejs/html. after render is the ('path'),
+    // which in this case is the index page/home page
+    //pass from server an object into render to be available to be output on path page
+    //passing articles variable to index path
+    res.render('sectors', { 
+        articles: articles
+    })
+});
+
+app.get('/FUTU', async (req, res) => { 
+    const articles = await Article.find().sort({createdAt: 'desc'})
+
+    //here we render the ejs/html. after render is the ('path'),
+    // which in this case is the index page/home page
+    //pass from server an object into render to be available to be output on path page
+    //passing articles variable to index path
+    res.render('FUTU', { 
+        articles: articles
+    })
+});
+
+app.get('/Asia', async (req, res) => { 
+    const articles = await Article.find().sort({createdAt: 'desc'})
+
+    //here we render the ejs/html. after render is the ('path'),
+    // which in this case is the index page/home page
+    //pass from server an object into render to be available to be output on path page
+    //passing articles variable to index path
+    res.render('Asia', { 
+        articles: articles
+    })
+});
+
+
+
+app.get('/dashboard', ensureAuthenticated, async (req, res) => { 
+    const articles = await Article.find().sort({createdAt: 'desc'})
+
+    //here we render the ejs/html. after render is the ('path'),
+    // which in this case is the index page/home page
+    //pass from server an object into render to be available to be output on path page
+    //passing articles variable to index path
+    res.render('dashboard', { 
+        articles: articles, 
+        name: req.user.name
+    })
 })
+
+
 
 //tells app to use the article router. this /articles makes it so router is only used after / articles. Way to separate routers
 

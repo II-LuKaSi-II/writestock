@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
+const { ensureAuthenticated } = require('../config/auth')
 
 
 
@@ -9,14 +10,14 @@ const passport = require("passport");
 const User = require("../models/User");
 
 //Login Page
-router.get("/login", (req, res) => res.render("login"));
+router.get("/login",  (req, res) => res.render("login"));
 
 //Register Page
-router.get("/register", (req, res) => res.render("register"));
+// router.get("/register", (req, res) => res.render("register"));
 
 //Register Handle
 //When register button is hit on form it's going to make a post request to /users/register
-router.post("/register", (req, res) => {
+router.post("/register", ensureAuthenticated, (req, res) => {
   //destrcuting allows us to pull things out of request.body
   const { name, email, password, password2 } = req.body;
   let errors = [];
@@ -92,7 +93,7 @@ router.post("/register", (req, res) => {
 //Login Handle
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", {
-    successRedirect: "/home/dashboard",
+    successRedirect: "/dashboard",
     failureRedirect: "/users/login",
     failureFlash: true,
   })(req, res, next);

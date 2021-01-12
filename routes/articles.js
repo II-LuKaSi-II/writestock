@@ -5,7 +5,7 @@ const { ensureAuthenticated } = require('../config/auth')
 
 
 //these all begin with /articles becuase that's how theyre brought into server.js
-router.get('/new', (req, res) => {
+router.get('/new', ensureAuthenticated, (req, res) => {
   res.render('articles/new', { article: new Article() })
 })
 
@@ -51,6 +51,10 @@ function saveArticleAndRedirect(path) {
     let article = req.article
     article.title = req.body.title
     article.logopicture = req.body.logopicture
+    article.articleType = req.body.articleType
+    article.articleTag = req.body.articleTag
+    article.articleTagTwo = req.body.articleTagTwo
+    article.articleTagThree = req.body.articleTagThree
     article.pricewritten = req.body.pricewritten
     article.description = req.body.description
     article.markdown = req.body.markdown

@@ -20,6 +20,19 @@ const articleSchema = new mongoose.Schema({
     logopicture: {
         type: String,
     },
+    articleType: {
+        type: String,
+    },
+    articleTag: {
+        type: String,
+    },
+    articleTagThree: {
+        type: String,
+    },
+    articleTagTwo: {
+        type: String,
+    },
+   
     pricewritten: {
         type: String
     },

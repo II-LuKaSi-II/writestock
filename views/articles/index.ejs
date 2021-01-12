@@ -54,43 +54,15 @@
   <!-- <link href="blog.css" rel="stylesheet"> -->
 </head>
 
-<body style="background-color: whitesmoke;">
-    <div id="containerBody" class=" row mt-4 mb-1 ">
-      <div id="marginContainer" class="col-md-12 ">
-        <div id="mediaCard1" style="background-color: rgb(252, 236, 217, .65);" class=" mediacard rounded mb-4 shadow-lg">
-          <div id="picContainer">
-            <img id="headShot" class="headShot shadow-sm" src="https://images.unsplash.com/photo-1527630941-4a229fd674ab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=904&q=80" width="155rem" alt="David Still Headshot">
-          </div>
-          <div id="name" class="col p-4 d-flex flex-column origindiv">
-            <h3 id="originHeader" class=" mb-1">Origin Story</h3>
-            <div id="card">
-              <div id="FA">
-                <div style="color: gray;"><i class="fas fa-chart-bar mr-1"></i></div>
-                <h6 style="padding-top: 1px; color: gray" class="mr-4">Financial Analyst</h6>
-              </div>  
-              <div style="display: flex; flex-direction: row;">
-                <div style="color: gray;"><i class="fas fa-globe-americas mr-1"></i></div>
-                <h6 style=" width: auto;   padding-top: 2px; color: gray;">New York City</h6>
-              </div>
-            </div>   
-            <p style="font-size: 20px; margin-top: -3px;" class=" writeUp mb-1">Writestock.com is the current project of an annonymous financial analyst - an active growth investor working in New York City with a passion for deep-dive financial analysis, and a penchant for all things Fintech. Having completed and passed all three levels of the CFA exam, and having worked in Finance here and abroad, he brings his experience and expertise to his writing. Learn more about him <a href="articles/about"> here</a>.</p>
-          </div>
-          <div  class="links">
-            <div style="text-decoration: none;" class="rounded h-10 shadow-sm socialmedialink"><a  class="a1" style=" text-decoration: none; background-color: rgb(10, 102, 194,.75) ; width:100%; color: rgb(255,255,255,0.75);  " href="#"><i  class="fab fa-linkedin fa-3x"></i></a></div>
-            <div class="rounded h-10 shadow-sm socialmedialink"><a class="a1" style=" text-decoration: none; background-color: rgb(189, 44, 0, .75) ; width:100%; color: rgb(255,255,255,0.75);  " href="#"><i  class="fab fa-github fa-3x"></i></a></div>
-            <div class="rounded h-10 shadow-sm socialmedialink"><a class="a1" style=" text-decoration: none; background-color: rgb(29, 161 ,242, .75); width:100%; color: rgb(255,255,255,0.75);  " href="https://twitter.com/writestock"><i  class="fab fa-twitter fa-3x"></i></a></div>
-            <div class="rounded h-10 shadow-sm socialmedialink"><a class="a1" style=" text-decoration: none; background-color: rgb(187, 0, 27, .75); width:100%; color: rgb(255,255,255,0.75); " href="mailto:writestockblog@gmail.com"><i  class="far fa-envelope fa-3x"></i></a></div>
-            
-            <!-- <div style=" width: 100%; color: #BD2C00; border: #BD2C00 1px solid;"> 
-              
-            </div> 
-              
-              
-               -->
-          </div>
-        </div>
-      </div>
-    </div>
+<body style="background-color: rgb(246, 246, 246);">
+<div id="navBody" style="color: white; width: 100%; margin-top: -2.75rem;" >
+  <div id="" style="border-radius: 0px; border-bottom: 3px solid rgba(40, 65, 134, 0.5);  padding: 2rem 18rem .5rem 18rem; margin-bottom: 0rem; background-color: white; margin-top: 2.75rem; padding-bottom: 0rem; display: flex; flex-direction: row;">
+      <h4 style="color: rgb(95, 95, 95);  margin-bottom: 0rem; padding-bottom: 1.5rem; background-color: white;  font-weight: 300; font-size: 26px;"> <strong id="authorName2" style="font-size: 32px; padding-top: 5rem; margin-right: .15rem;">WRITESTOCK</strong> is the current project of New York based financial analyst <strong style="color: rgb(67, 99, 160);" id="authorName2">STILLWATER</strong> . Through deep-dive analytical reporting, reviews of company financials, and insight into the current market trends, <strong id="authorName2">WRITESTOCK</strong> is meant to help the reader better understand the companies in which they are invested. Learn how to best utilize the site in our <strong style="color:maroon; margin-right: .10rem;" id="authorName2">PRIMER</strong> and contact us here: <i class="fab fa-twitter-square"></i> <i class="fas fa-envelope-square"></i>
+
+      </h4>
+  </div>       
+    <br>
+</div>   
     <!-- <div style="margin-right: 6rem; margin-left: 6rem;" class="row mb-2">
       <div class="col-md-6">
         <div style="background-color: white;" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250">
@@ -142,28 +114,35 @@
               <img style="max-width: 100%; margin-top: 1.5rem; margin-bottom: 1.5rem;"  src="<%= article.logopicture %>" alt="Company logo">
             </div>
             <h4 class="card-title"><%= article.title %></h4>
-            <div id="dateColor" style="color: rgba(61, 61, 248, 0.5); " class="card-subtitle mb-2">
+            <div id="authorName" class="card-subtitle">
+               <div id="authorName">STILLWATER</div>
               <%= article.createdAt.toLocaleDateString() %>
             </div>
-            <div class="card-text mb-2">
-              <%= article.description %>
+            <div  class="card-text mb-2">
+              <h5 style="margin-top: .25rem; font-weight: 300;"> <%= article.description %> </h5>
             </div>
-            <a href="articles/<%= article.slug %> " class="btn btn-dark ">Read More</a>
+            <div style="margin-bottom: 0rem;" id="articleTagsLine">
+              <a style="border: rgb(1, 204, 126) 2px solid; background-color: white; font-weight: bold;; color:  rgb(1, 204, 126);" href="/<%= article.articleTag %>" class=" btn-primary tags"> <%= article.articleTag %> </a>
+              <a  style="border: white 2px solid; " href="/<%= article.articleTagTwo %>" class=" btn-primary tags"> <%= article.articleTagTwo %> </a>
+              <a style="border: white 2px solid;" href="/<%= article.articleTagThree %>" class=" btn-primary tags"> <%= article.articleTagThree %> </a>
+            </div>
+            <a href="articles/<%= article.slug %> " class="btn indexbtn btn-dark ">Read More</a>
+
             <!-- <a href="articles/edit/<%= article.id %> " id="share1" class="btm btn"><i class=" fab fa-twitter-square fa-2x"></i></a> -->
            
             
             <!-- cant use link tags to delete articles because google clicks all links when indexing -->
-            <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                        <button type="submit" class="btn btn-danger">Delete</button> -->
+            <!--  <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                       <button type="submit" class="btn btn-danger">Delete</button> -->
                         </form>
           </div>
         </div>
         <div  style=" width: 40%;" class="rightColumn">
-          <div class="logoPicContainer">
+          <!-- <div class="logoPicContainer"> -->
             <div id="rightColumn">
               <img id="logoPicLogo" src="<%= article.logopicture %>" alt="Company logo">
             </div>
-          </div>
+          <!-- </div> -->
           <!-- <div  class="stockPrices">
             <div style=" background-color: white; height: 25%;" class=" art border rounded shadow-sm card stockPriceWritten">
               <div style="font-size: 12px; font-weight: bolder; display: grid; align-items: center; justify-content: center;">Ticker:</div>

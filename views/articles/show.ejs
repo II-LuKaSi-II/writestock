@@ -49,17 +49,25 @@
   <div id="showContainer">
    <div class="articleHead">
     <div>
+        <div id="articleType"> <%= article.articleType %>  </div>
         <h1 id="articleTitle"><%= article.title %></h1>
+        <div id="articleTagsLine">
+          <a href="/<%= article.articleTag %>" class=" btn-primary tags"> <%= article.articleTag %> </a>
+          <a href="/<%= article.articleTagTwo %>" class=" btn-primary tags"> <%= article.articleTagTwo %> </a>
+          <a href="/<%= article.articleTagThree %>" class=" btn-primary tags"> <%= article.articleTagThree %> </a>
+        </div>
+    </div>
+    <div id="logoContainer">
+      <img id="logoPicHeader" src="<%= article.logopicture %>" alt="Girl in a jacket">
+    </div>
+   </div>
+      <div>
+        <div id="authorName">STILLWATER</div>
         <div id="dateCreated" >
           <%= article.createdAt.toLocaleDateString() %> 
-          <div id="authorName"> David Still</div>
-        </div>
-      </div>
-      <div id="logoContainer">
-        <img id="logoPicHeader" src="<%= article.logopicture %>" alt="Girl in a jacket">
-      </div>
-   </div>
-    <div>
+          </div>
+      </div>  
+      <div>
       <%- article.sanitizedHtml %>
     </div>
     <a href="/" class="btn btn-secondary">All Articles</a>
