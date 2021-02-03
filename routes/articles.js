@@ -52,9 +52,16 @@ function saveArticleAndRedirect(path) {
     article.title = req.body.title
     article.logopicture = req.body.logopicture
     article.articleType = req.body.articleType
+    article.articleTicker = req.body.articleTicker
+    article.articleTickerTwo = req.body.articleTickerTwo
+    article.articleTickerThree = req.body.articleTickerThree
+    article.articleTickerFour = req.body.articleTickerFour
+    article.articleTickerFive = req.body.articleTickerFive
     article.articleTag = req.body.articleTag
     article.articleTagTwo = req.body.articleTagTwo
     article.articleTagThree = req.body.articleTagThree
+    article.articleTagFour = req.body.articleTagFour
+    article.articleTagFive = req.body.articleTagFive
     article.pricewritten = req.body.pricewritten
     article.description = req.body.description
     article.markdown = req.body.markdown

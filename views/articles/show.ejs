@@ -48,13 +48,65 @@
 <body style="background-color: white;">
   <div id="showContainer">
    <div class="articleHead">
-    <div>
+    <div style="margin-bottom: 5px;">
         <div id="articleType"> <%= article.articleType %>  </div>
         <h1 id="articleTitle"><%= article.title %></h1>
-        <div id="articleTagsLine">
-          <a href="/<%= article.articleTag %>" class=" btn-primary tags"> <%= article.articleTag %> </a>
-          <a href="/<%= article.articleTagTwo %>" class=" btn-primary tags"> <%= article.articleTagTwo %> </a>
-          <a href="/<%= article.articleTagThree %>" class=" btn-primary tags"> <%= article.articleTagThree %> </a>
+        <div style="margin-bottom: 0rem;" id="tickerTagsLine">
+          <div class="tickerline">
+            <% if(article.articleTicker) { %> 
+              <div class="hiddenDiv">
+                <a  href="ticker/<%= article.articleTicker %>" class=" tickersbtn btn-primary tags"> <%= article.articleTicker %> </a>
+              </div>
+              <% } %> 
+              <% if(article.articleTickerTwo) { %> 
+              <div class="hiddenDiv">
+                <a  href="ticker/<%= article.articleTickerTwo %>" class=" tickersbtn btn-primary tags"> <%= article.articleTickerTwo %> </a>
+              </div>
+              <% } %> 
+              <% if(article.articleTickerThree) { %> 
+              <div class="hiddenDiv">
+                <a  href="ticker/<%= article.articleTickerThree %>" class=" tickersbtn btn-primary tags"> <%= article.articleTickerThree %> </a>
+              </div>
+              <% } %> 
+              <% if(article.articleTickerFour) { %> 
+              <div class="hiddenDiv">
+                <a  href="ticker/<%= article.articleTickerFour %>" class=" tickersbtn btn-primary tags"> <%= article.articleTickerFour %> </a>
+              </div>
+              <% } %> 
+              <% if(article.articleTickerFive) { %> 
+              <div class="hiddenDiv">
+                <a  href="ticker/<%= article.articleTickerFive %>" class=" tickersbtn btn-primary tags"> <%= article.articleTickerFive %> </a>
+              </div>
+              <% } %> 
+          </div>
+          <div class="tagsline">
+            <% if(article.articleTag) { %> 
+              <div>
+                <a  style="border: white 2px solid; " href="tags/<%= article.articleTag %>" class="  btn-primary tags"> <%= article.articleTag %> </a>
+              </div>
+              <% } %> 
+              <% if(article.articleTagTwo) { %> 
+              <div>
+                <a  style="border: white 2px solid; " href="tags/<%= article.articleTagTwo %>" class="  btn-primary tags"> <%= article.articleTagTwo %> </a>
+              </div>
+              <% } %>     
+              <% if(article.articleTagThree) { %> 
+              <div>
+                <a  style="border: white 2px solid; " href="tags/<%= article.articleTagThree %>" class="  btn-primary tags"> <%= article.articleTagThree %> </a>
+              </div>
+              <% } %>    
+              <% if(article.articleTagFour) { %> 
+              <div>
+                <a  style="border: white 2px solid; " href="tags/<%= article.articleTagFour %>" class="  btn-primary tags"> <%= article.articleTagFour %> </a>
+              </div>
+              <% } %>        
+              <% if(article.articleTagFive) { %> 
+              <div>
+                <a  style="border: white 2px solid; " href="/<%= article.articleTagFive %>" class="  btn-primary tags"> <%= article.articleTagFive %> </a>
+              </div>
+              <% } %> 
+          </div>
+
         </div>
     </div>
     <div id="logoContainer">

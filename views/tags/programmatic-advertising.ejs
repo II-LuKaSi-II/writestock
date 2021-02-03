@@ -1,11 +1,11 @@
 <div id="recentArticles" class="articles">
-    <h1  class=" pt-5">Futu</h1>
-    <h4 style="color: rgb(95, 95, 95, .95);border-bottom: 3px solid rgba(40, 65, 134, 0.5); margin-top: -.5rem; margin-bottom: 5rem; margin-left: 2px; font-weight: 300;" class="pb-3 mb-3">Futu is a financial powerhouse out of HK </h4>
+    <h1  class=" pt-5">Programmatic Advertising</h1>
+    <h4 style="color: rgb(95, 95, 95, .95);border-bottom: 3px solid rgba(40, 65, 134, 0.5); margin-top: -.5rem; margin-bottom: 5rem; margin-left: 2px; font-weight: 300;" class="pb-3 mb-3">The new buzzword on Madison Avenue and the implications on the industry moving forward</h4>
     <br>
     <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
     <!-- This symbol < % without the = will run the code but not ouput it -->
     <% articles.forEach(article => { %>
-      <% if(article.articleTag === 'FUTU' || article.articleTagTwo === 'FUTU' || article.articleTagThree === 'FUTU') { %> 
+      <% if(article.articleTag === 'Programmatic Advertising' || article.articleTagTwo === 'Programmatic Advertising'  || article.articleTagThree === 'Programmatic Advertising' || article.articleTagFour === 'Programmatic Advertising' || article.articleTagFive === 'Programmatic Advertising') { %> 
           <div class=" art border rounded shadow-sm card mb-1">
               <div class="card-body row no-gutters  overflow-hidden flex-md-row  h-md-250">
               <div class="article-body">
@@ -13,7 +13,7 @@
                   <img style="max-width: 100%; margin-top: 1.5rem; margin-bottom: 1.5rem;"  src="<%= article.logopicture %>" alt="Company logo">
                   </div>
                   <h4 class="card-title"><%= article.title %></h4>
-                  <div id="dateColor" class="card-subtitle">
+                  <div id="authorName" class="card-subtitle">
                     <%= article.createdAt.toLocaleDateString() %>
                     <div id="authorName">STILLWATER</div>
                   </div>
@@ -49,3 +49,4 @@
     <br />
   </div>
   </div>
+  

@@ -12,7 +12,7 @@ const dompurify = createDomPurify(new JSDOM().window)
 const articleSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true
+        required: true,
     },
     description: {
         type: String
@@ -23,15 +23,47 @@ const articleSchema = new mongoose.Schema({
     articleType: {
         type: String,
     },
-    articleTag: {
+
+    articleTicker: {
         type: String,
     },
-    articleTagThree: {
+    articleTickerTwo: {
+        type: String,
+        required: false
+    },
+    articleTickerThree: {
+        type: String,
+        required: false
+    },
+    articleTickerFour: {
+        type: String,
+        required: false
+    },
+    articleTickerFive: {
+        type: String,
+        required: false
+    },
+
+    articleTag: {
         type: String,
     },
     articleTagTwo: {
         type: String,
+        required: false
     },
+    articleTagThree: {
+        type: String,
+        required: false
+    },
+    articleTagFour: {
+        type: String,
+        required: false
+    },
+    articleTagFive: {
+        type: String,
+        required: false
+    },
+   
    
     pricewritten: {
         type: String

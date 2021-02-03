@@ -7,8 +7,13 @@ const mongoose = require('mongoose')
 // in order to access the articles we need to pull in the article model
 const Article = require('./models/article')
 //this is how you access the router from the aticles.js router
+const request = require('request');
+const bodyParser = require('body-parser')
+
 const articleRouter = require('./routes/articles')
 const homeRouter = require('./routes/home')
+const tagsRouter = require('./routes/tags')
+const tickerRouter = require('./routes/ticker')
 //this is to use other methods besdies get post
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
@@ -32,6 +37,32 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreat
 // mongoose.connect('mongodb://localhost/writestockblog', { 
 //     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 // })
+// API Key pk_32b83d1e7ecb4c229b342146677133aa
+//create call API Function 
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+function call_api(finishedAPI, tickticktick) {
+    if(tickticktick) {
+        request('https://cloud.iexapis.com/stable/stock/' + tickticktick + '/quote?token=pk_32b83d1e7ecb4c229b342146677133aa', { json: true }, (err, res, body) => {
+            if(err) {return console.log(err);}
+            if(res.statusCode === 200) {
+                // console.log(body);
+                finishedAPI(body);
+                };
+            });
+    }
+    if(!tickticktick) {
+        request('https://cloud.iexapis.com/stable/stock/sklz/quote?token=pk_32b83d1e7ecb4c229b342146677133aa', { json: true }, (err, res, body) => {
+            if(err) {return console.log(err);}
+            if(res.statusCode === 200) {
+                // console.log(body);
+                finishedAPI(body);
+                };
+            });
+    }
+
+};
 
 
 // EJS Layouts 
@@ -78,12 +109,28 @@ app.use('/public', express.static('public'));
 //create route for index, takes in request and response
 app.get('/', async (req, res) => { 
     const articles = await Article.find().sort({createdAt: 'desc'})
-
+    call_api(function(doneAPI) {
+            res.render('articles/index', {
+            articles: articles, 
+            stock: doneAPI  
+            });
+    }, 'fb');
     //here we render the ejs/html. after render is the ('path'),
     // which in this case is the index page/home page
     //pass from server an object into render to be available to be output on path page
     //passing articles variable to index path
-    res.render('articles/index', { articles: articles })
+
+});
+//set Post Route
+app.post('/', async (req, res) => { 
+    call_api(function(doneAPI) {
+        // posted_stuff = req.body.stock_ticker;
+        res.render('articles/index', {
+        articles: articles, 
+        stock: doneAPI,  
+        });
+    }, req.body.stock_ticker);
+    const articles = await Article.find().sort({createdAt: 'desc'})
 });
 
 // app.get('/articles/about', async (req, res) => { 
@@ -132,31 +179,6 @@ app.get('/sectors', async (req, res) => {
     })
 });
 
-app.get('/FUTU', async (req, res) => { 
-    const articles = await Article.find().sort({createdAt: 'desc'})
-
-    //here we render the ejs/html. after render is the ('path'),
-    // which in this case is the index page/home page
-    //pass from server an object into render to be available to be output on path page
-    //passing articles variable to index path
-    res.render('FUTU', { 
-        articles: articles
-    })
-});
-
-app.get('/Asia', async (req, res) => { 
-    const articles = await Article.find().sort({createdAt: 'desc'})
-
-    //here we render the ejs/html. after render is the ('path'),
-    // which in this case is the index page/home page
-    //pass from server an object into render to be available to be output on path page
-    //passing articles variable to index path
-    res.render('Asia', { 
-        articles: articles
-    })
-});
-
-
 
 app.get('/dashboard', ensureAuthenticated, async (req, res) => { 
     const articles = await Article.find().sort({createdAt: 'desc'})
@@ -179,6 +201,8 @@ app.get('/dashboard', ensureAuthenticated, async (req, res) => {
 // Routes
 
 app.use('/home', homeRouter)
+app.use('/tags', tagsRouter)
+app.use('/ticker', tickerRouter)
 app.use('/users', require('./routes/users'))
 app.use('/subscribers', require('./routes/subscribers'))
 app.use('/articles', articleRouter)

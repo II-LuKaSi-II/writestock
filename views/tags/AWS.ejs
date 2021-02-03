@@ -1,0 +1,52 @@
+<div id="recentArticles" class="articles">
+    <h1  class=" pt-5">Amazon Web Services</h1>
+    <h4 style="color: rgb(95, 95, 95, .95);border-bottom: 3px solid rgba(40, 65, 134, 0.5); margin-top: -.5rem; margin-bottom: 5rem; margin-left: 2px; font-weight: 300;" class="pb-3 mb-3">The world leader in online hosting</h4>
+    <br>
+    <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
+    <!-- This symbol < % without the = will run the code but not ouput it -->
+    <% articles.forEach(article => { %>
+      <% if(article.articleTag === 'AWS' || article.articleTagTwo === 'AWS'  || article.articleTagThree === 'AWS' || article.articleTagFour === 'AWS' || article.articleTagFive === 'AWS') { %> 
+          <div class=" art border rounded shadow-sm card mb-1">
+              <div class="card-body row no-gutters  overflow-hidden flex-md-row  h-md-250">
+              <div class="article-body">
+                  <div id="logo2" style="justify-content: center; align-items: center;">
+                  <img style="max-width: 100%; margin-top: 1.5rem; margin-bottom: 1.5rem;"  src="<%= article.logopicture %>" alt="Company logo">
+                  </div>
+                  <h4 class="card-title"><%= article.title %></h4>
+                  <div id="authorName" class="card-subtitle">
+                    <%= article.createdAt.toLocaleDateString() %>
+                    <div id="authorName">STILLWATER</div>
+                  </div>
+                  <div class="card-text mb-2">
+                    <%= article.description %>
+                  </div>
+                  <div style="margin-bottom: 0rem;" id="articleTagsLine">
+                    <div class=" btn-primary tags"> <%= article.articleTag %>  </div>
+                    <a href="/" class=" btn-primary tags"> <%= article.articleTagTwo %> </a>
+                    <div class=" btn-primary tags"> <%= article.articleTagThree %>  </div>
+                  </div>
+                  <a href="articles/<%= article.slug %> " class="btn indexbtn btn-dark ">Read More</a>
+      
+                  <!-- <a href="articles/edit/<%= article.id %> " id="share1" class="btm btn"><i class=" fab fa-twitter-square fa-2x"></i></a> -->
+                 
+                  
+                  <!-- cant use link tags to delete articles because google clicks all links when indexing -->
+                  <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                              <button type="submit" class="btn btn-danger">Delete</button> -->
+                              </form>
+                </div>
+              </div>
+              <div  style=" width: 40%;" class="rightColumn">
+              <div class="logoPicContainer">
+                  <div id="rightColumn">
+                  <img id="logoPicLogo" src="<%= article.logopicture %>" alt="Company logo">
+                  </div>
+              </div>
+              </div>
+          </div>
+      <% } %> 
+    <% }) %>
+    <br />
+  </div>
+  </div>
+  

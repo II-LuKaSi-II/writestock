@@ -1,9 +1,11 @@
 <div id="recentArticles" class="articles">
-    <h1  class=" pt-5">Sectors & Trends</h1>
-    <h4 style="color: rgb(95, 95, 95, .95);border-bottom: 3px solid rgba(40, 65, 134, 0.5); margin-top: -.5rem; margin-bottom: 5rem; margin-left: 2px; font-weight: 300;" class="pb-3 mb-3">Insight & Analysis into what sectors are moving the market, and the industry themes that are driving them. </h4>
+    <h1  class=" pt-5">Asia</h1>
+    <h4 style="color: rgb(95, 95, 95, .95);border-bottom: 3px solid rgba(40, 65, 134, 0.5); margin-top: -.5rem; margin-bottom: 5rem; margin-left: 2px; font-weight: 300;" class="pb-3 mb-3">One of the world's fastest growing regions is home to some of the world's fastest growing companies</h4>
     <br>
+    <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
+    <!-- This symbol < % without the = will run the code but not ouput it -->
     <% articles.forEach(article => { %>
-      <% if(article.articleType === 'Sectors & Trends') { %> 
+      <% if(article.articleTag === 'Asia' || article.articleTagTwo === 'Asia'  || article.articleTagThree === 'Asia' || article.articleTagFour === 'Asia' || article.articleTagFive === 'Asia') { %> 
         <div class=" art border rounded shadow-sm card mb-1">
           <div class="card-body row no-gutters  overflow-hidden flex-md-row  h-md-250">
             <div class="article-body">

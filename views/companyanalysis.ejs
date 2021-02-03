@@ -6,44 +6,120 @@
   <!-- This symbol < % without the = will run the code but not ouput it -->
   <% articles.forEach(article => { %>
     <% if(article.articleType === 'Company Analysis') { %> 
-        <div class=" art border rounded shadow-sm card mb-1">
-            <div class="card-body row no-gutters  overflow-hidden flex-md-row  h-md-250">
-            <div class="article-body">
-                <div id="logo2" style="justify-content: center; align-items: center;">
-                <img style="max-width: 100%; margin-top: 1.5rem; margin-bottom: 1.5rem;"  src="<%= article.logopicture %>" alt="Company logo">
-                </div>
-                <h4 class="card-title"><%= article.title %></h4>
-                <div id="authorName" class="card-subtitle">
-                  <%= article.createdAt.toLocaleDateString() %>
-                  <div id="authorName">STILLWATER</div>
-                </div>
-                <div class="card-text mb-2">
-                  <%= article.description %>
-                </div>
-                <div style="margin-bottom: 0rem;" id="articleTagsLine">
-                  <div class=" btn-primary tags"> <%= article.articleTag %>  </div>
-                  <a href="/" class=" btn-primary tags"> <%= article.articleTagTwo %> </a>
-                  <div class=" btn-primary tags"> <%= article.articleTagThree %>  </div>
-                </div>
-                <a href="articles/<%= article.slug %> " class="btn indexbtn btn-dark ">Read More</a>
-    
-                <!-- <a href="articles/edit/<%= article.id %> " id="share1" class="btm btn"><i class=" fab fa-twitter-square fa-2x"></i></a> -->
-               
-                
-                <!-- cant use link tags to delete articles because google clicks all links when indexing -->
-                <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                            <button type="submit" class="btn btn-danger">Delete</button> -->
-                            </form>
+      <div class=" art border rounded shadow-sm card mb-1">
+        <div class="card-body row no-gutters  overflow-hidden flex-md-row  h-md-250">
+          <div class="article-body">
+            <div id="logo2" style="justify-content: center; align-items: center;">
+              <img style="max-width: 100%; margin-top: 1.5rem; margin-bottom: 1.5rem;"  src="<%= article.logopicture %>" alt="Company logo">
+            </div>
+            <h4 class="card-title"><%= article.title %></h4>
+            <div id="authorName" class="card-subtitle">
+               <div id="authorName">STILLWATER</div>
+              <%= article.createdAt.toLocaleDateString() %>
+            </div>
+            <div  class="card-text mb-2">
+              <h5 style="margin-top: .25rem; font-weight: 300;"> <%= article.description %> </h5>
+            </div>
+            <div style="margin-bottom: 0rem;" id="tickerTagsLine">
+              <div class="tickerline">
+                <% if(article.articleTicker) { %> 
+                  <div class="hiddenDiv">
+                    <a  href="ticker/<%= article.articleTicker %>" class=" tickersbtn btn-primary tags"> <%= article.articleTicker %> </a>
+                  </div>
+                  <% } %> 
+                  <% if(article.articleTickerTwo) { %> 
+                  <div class="hiddenDiv">
+                    <a  href="ticker/<%= article.articleTickerTwo %>" class=" tickersbtn btn-primary tags"> <%= article.articleTickerTwo %> </a>
+                  </div>
+                  <% } %> 
+                  <% if(article.articleTickerThree) { %> 
+                  <div class="hiddenDiv">
+                    <a  href="ticker/<%= article.articleTickerThree %>" class=" tickersbtn btn-primary tags"> <%= article.articleTickerThree %> </a>
+                  </div>
+                  <% } %> 
+                  <% if(article.articleTickerFour) { %> 
+                  <div class="hiddenDiv">
+                    <a  href="ticker/<%= article.articleTickerFour %>" class=" tickersbtn btn-primary tags"> <%= article.articleTickerFour %> </a>
+                  </div>
+                  <% } %> 
+                  <% if(article.articleTickerFive) { %> 
+                  <div class="hiddenDiv">
+                    <a  href="ticker/<%= article.articleTickerFive %>" class=" tickersbtn btn-primary tags"> <%= article.articleTickerFive %> </a>
+                  </div>
+                  <% } %> 
               </div>
+              <div class="tagsline">
+                <% if(article.articleTag) { %> 
+                  <div>
+                    <a  style="border: white 2px solid; " href="/<%= article.articleTag %>" class="  btn-primary tags"> <%= article.articleTag %> </a>
+                  </div>
+                  <% } %> 
+                  <% if(article.articleTagTwo) { %> 
+                  <div>
+                    <a  style="border: white 2px solid; " href="/<%= article.articleTagTwo %>" class="  btn-primary tags"> <%= article.articleTagTwo %> </a>
+                  </div>
+                  <% } %>     
+                  <% if(article.articleTagThree) { %> 
+                  <div>
+                    <a  style="border: white 2px solid; " href="/<%= article.articleTagThree %>" class="  btn-primary tags"> <%= article.articleTagThree %> </a>
+                  </div>
+                  <% } %>    
+                  <% if(article.articleTagFour) { %> 
+                  <div>
+                    <a  style="border: white 2px solid; " href="/<%= article.articleTagFour %>" class="  btn-primary tags"> <%= article.articleTagFour %> </a>
+                  </div>
+                  <% } %>        
+                  <% if(article.articleTagFive) { %> 
+                  <div>
+                    <a  style="border: white 2px solid; " href="/<%= article.articleTagFive %>" class="  btn-primary tags"> <%= article.articleTagFive %> </a>
+                  </div>
+                  <% } %> 
+              </div>
+  
             </div>
-            <div  style=" width: 40%;" class="rightColumn">
-            <div class="logoPicContainer">
-                <div id="rightColumn">
-                <img id="logoPicLogo" src="<%= article.logopicture %>" alt="Company logo">
-                </div>
-            </div>
-            </div>
+            <a href="articles/<%= article.slug %> " class="btn indexbtn btn-dark ">Read More</a>
+
+            <!-- <a href="articles/edit/<%= article.id %> " id="share1" class="btm btn"><i class=" fab fa-twitter-square fa-2x"></i></a> -->
+           
+            
+            <!-- cant use link tags to delete articles because google clicks all links when indexing -->
+            <!--  <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                       <button type="submit" class="btn btn-danger">Delete</button> -->
+                        </form>
+          </div>
         </div>
+        <div  style=" width: 40%;" class="rightColumn">
+          <!-- <div class="logoPicContainer"> -->
+            <div id="rightColumn">
+              <img id="logoPicLogo" src="<%= article.logopicture %>" alt="Company logo">
+            </div>
+          <!-- </div> -->
+          <!-- <div  class="stockPrices">
+            <div style=" background-color: white; height: 25%;" class=" art border rounded shadow-sm card stockPriceWritten">
+              <div style="font-size: 12px; font-weight: bolder; display: grid; align-items: center; justify-content: center;">Ticker:</div>
+              <div style=" margin-top: -.5rem; display: grid; align-items: center; justify-content: center;">LTSPD</div>
+            </div>
+            <div style="background-color:rgb(176, 196, 222, 20%);;  height: 25%;" class="art border rounded shadow-sm card stockPriceCurrent">
+              <div style="font-size: 12px; font-weight: bolder;">Price @ Time of Writing</div>
+              <div style="margin-top: -.25rem; font-size: 20px; display: grid; align-items: center; justify-content: center;"><%= article.pricewritten %></div>
+            </div>
+            <div style="display: flex; flex-direction: row; background-color: whitesmoke;  height: 25%;" class="stockPriceCurrent">
+              <div style="background-color: rgb(144, 238, 144, 20%); width: 50%; height: 100%;" class="art border rounded shadow-sm card" > 
+                <div style="font-size: 12px; font-weight: bolder; display: grid; align-items: center; justify-content: center;">Current Price</div>
+                <div style="margin-top: -.25rem; font-size: 20px; display: grid; align-items: center; justify-content: center;"><%= article.pricewritten %></div>
+              </div>  
+              <div style="width: 50%; height: 100%;" class="art border rounded shadow-sm card"> 
+                <div style=" font-size: 12px; font-weight: bolder; display: grid; align-items: center; justify-content: center;">% Change</div>
+                <div style="margin-top: -.25rem; font-size: 20px; display: grid; align-items: center; justify-content: center;">+17%</div>
+              </div>    
+            </div>
+            <div style="background-color: whitesmoke;  height: 25%;" class="art border rounded shadow-sm card stockPriceCurrent">
+              <div style="font-size: 12px; font-weight: bolder;">Price @ Time of Writing</div>
+              <div style="margin-top: -.25rem; font-size: 20px; display: grid; align-items: center; justify-content: center;"><%= article.pricewritten %></div>
+            </div>
+          </div> -->
+        </div>
+      </div>
     <% } %> 
   <% }) %>
   <br />

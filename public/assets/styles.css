@@ -1,6 +1,9 @@
 
 /* Navigation bar css */
 
+
+ 
+
 #navBody {
   display: flex; 
   flex-direction: column; 
@@ -173,28 +176,64 @@ margin-left: 15.5rem
 #articleType {
   font-size: 15;
   font-weight: 600;
-  color: rgb(3, 180, 3);
+  color: rgb(38, 139, 197);
 }
 
-#articleTagsLine {
+#articleType2 {
+  font-size: 15;
+  font-weight: 600;
+  color: rgb(39, 196, 91);
+}
+
+#articleType3 {
+  font-size: 15;
+  font-weight: 600;
+  color: rgb(217, 240, 85);
+}
+
+#tickerTagsLine {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.tickerline {
+  display: flex;
+  margin-right: 5px;
+  flex-direction: row;
+}
+
+.tagsline {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1.5rem;
 }
+
+
+.tickersbtn {
+  border: rgb(1, 204, 126) 2px solid; 
+  background-color: white; 
+  font-weight: 600; 
+  margin-right: 5px;
+  color: rgb(1, 204, 126);
+}
+
+
 
 .tags {
   padding: 0px .5rem 1px .5rem;
   font-size: 14px;
-  border-radius: 4px;
-  margin-right: .3rem;
-  margin-bottom: .5rem;
-  font-weight: 300;
+  margin-right: 0rem;
   cursor: pointer;
   text-decoration: none;
 }
 
 .tags:hover {
   text-decoration: none;
+}
+
+.tags:empty {
+  display: none;
+
 }
 
 #dateColor {
@@ -428,6 +467,10 @@ margin-left: 15.5rem
   width: 100%;
  }
 
+ .hiddenDiv {
+   margin-right: 3px;
+   margin-bottom: 3px;
+ }
 
 
 /* .links:hover{
@@ -449,6 +492,7 @@ margin-left: 15.5rem
 .indexbtn {
   margin-top: .25rem;
 }
+
 
 .art {
   transition: all .3s ease-in-out 0s;
