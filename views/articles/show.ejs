@@ -113,12 +113,15 @@
       <img id="logoPicHeader" src="<%= article.logopicture %>" alt="Girl in a jacket">
     </div>
    </div>
+    <div style="display: flex; flex-direction: row;"> 
       <div>
-        <div id="authorName">STILLWATER</div>
-        <div id="dateCreated" >
-          <%= article.createdAt.toLocaleDateString() %> 
-          </div>
-      </div>  
+        <img src="https://imgur.com/IzGGPdO.jpg" height="35px" width="auto" alt="">
+      </div>
+      <div id="authorName" class="ml-1 card-subtitle">
+        <div style="padding-top: .1rem;" id="authorName">STILLWATER</div>
+        <div><%= article.createdAt.toLocaleDateString() %></div>
+      </div>
+    </div> 
       <div>
       <%- article.sanitizedHtml %>
     </div>

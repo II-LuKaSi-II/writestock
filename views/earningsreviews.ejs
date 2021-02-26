@@ -1,6 +1,6 @@
 <div id="recentArticles" class="articles">
     <h1  class=" pt-5">Earnings Reviews</h1>
-    <h4 style="color: rgb(95, 95, 95, .95);border-bottom: 3px solid rgba(40, 65, 134, 0.5); margin-top: -.5rem; margin-bottom: 5rem; margin-left: 2px; font-weight: 300;" class="pb-3 mb-3">Review of the most recent earnings releases and their implications on future company performance. </h4>
+    <h4 style="color: rgb(95, 95, 95, .95);border-bottom: 2px solid rgba(40, 65, 134, 0.5); margin-top: -.5rem; margin-bottom: 5rem; margin-left: 2px; font-weight: 300;" class="pb-3 mb-3">Review of the most recent earnings releases and their implications on future company performance. </h4>
     <br>
     <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
     <!-- This symbol < % without the = will run the code but not ouput it -->
@@ -13,7 +13,7 @@
                 <img style="max-width: 100%; margin-top: 1.5rem; margin-bottom: 1.5rem;"  src="<%= article.logopicture %>" alt="Company logo">
               </div>
               <h4 class="card-title"><%= article.title %></h4>
-              <div id="authorName" class="card-subtitle">
+              <div id="authorName" >
                  <div id="authorName">STILLWATER</div>
                 <%= article.createdAt.toLocaleDateString() %>
               </div>

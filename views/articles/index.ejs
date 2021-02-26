@@ -57,11 +57,11 @@
 
 <body style="background-color: rgb(248, 246, 246, .5);">
   <div id="" style="border-radius: 0px; background-color: rgb(248, 246, 246, .5) ; margin-top: 2.75rem; padding-bottom: 0rem; display: flex; flex-direction: row;">
-      <h4 style="color: rgb(95, 95, 95); padding: 1.25rem; border: maroon 3.5px solid; border-radius: 6px; background-color: white;  font-weight: 300; font-size: 26px; margin-right: 16.5rem; margin-left: 16.5rem;"> <strong id="authorName2" style="font-size: 32px; padding-top: 5rem; margin-right: .15rem;">WRITESTOCK</strong> is the current project of New York based financial analyst <strong style="color: rgb(67, 99, 160);" id="authorName2">STILLWATER.</strong> Through deep-dive analytical reporting, reviews of company financials, and insight into the current market trends, <strong id="authorName2">WRITESTOCK</strong> is meant to help the reader better understand the companies in which they are invested. Learn how to best utilize the site in our <strong style="color:maroon; margin-right: .10rem;" id="authorName2">PRIMER</strong> and contact us here: <i class="fab fa-twitter-square"></i> <i class="fas fa-envelope-square"></i>
+      <h4 style="color: rgb(17, 17, 17); padding: 1.25rem; border: maroon 3px solid; border-radius: 6px; background-color: white;  font-weight: 300; font-size: 26px; margin-right: 16.5rem; margin-left: 16.5rem;"> <strong id="authorName2" style="font-size: 24px; padding-top: 5rem; margin-right: .15rem;">WRITESTOCK</strong> is the current project of New York based financial analyst, <strong style=" font-size: 24px; color: rgb(67, 99, 160);" id="authorName2">STILLWATER.</strong> Through deep-dive analytical reporting, reviews of company financials, and insight into current market trends, our goal is to help the reader learn about new and innovative companies. This site is meant for entertainment purposes only and should not be taken as financial advice. 
       </h4>
       
   </div> 
-  <div style="margin-top: 2rem; margin-right: 16.5rem; margin-left: 16.5rem; margin-bottom: 1rem; border-bottom:  rgb(67, 99, 160, .5) 3px solid;"></div>      
+  <div style="margin-top: 2rem; margin-right: 16.5rem; margin-left: 16.5rem; margin-bottom: 1rem; border-bottom:  rgb(67, 99, 160, .5) 2px solid;"></div>      
     <br>
     <!-- <div style="margin-right: 6rem; margin-left: 6rem;" class="row mb-2">
       <div class="col-md-6">
@@ -104,17 +104,6 @@
     </div>  -->
 
     <div id="recentArticles" class="articles border-top">
-
-      <div>
-        <h2> <%= stock.companyName %> (<%= stock.symbol %>)  </h2>
-        <div>
-          <form class="form-inline my-2 my-lg-0" action="/" method="POST"> 
-            <input class="form-control mr-sm-2" type="search" placeholder="Look up some shit" aria-label="Search" name="stock_ticker">
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Lookup</button>
-          </form>
-        </div>
-        <h4> Current Price: <%= stock.latestPrice %>  </h4>
-      </div>
       <!-- <h2 style="color: rgb(95, 95, 95);" class="ml-1 pt-2 pb-1">Recent Articles</h2> -->
       <!-- <a href="/articles/new"  class='btn btn-success'> New Article</a> -->
       <!-- This symbol < % without the = will run the code but not ouput it -->
@@ -126,23 +115,20 @@
             <img style="max-width: 100%; margin-top: 1.5rem; margin-bottom: 1.5rem;"  src="<%= article.logopicture %>" alt="Company logo">
             </div>
             <% if(article.articleType === 'Company Analysis') { %> 
-            <a href="/companyanalysis"><div id="articleType"> <%= article.articleType %>  </div></a>
+            <a href="/companyanalysis"><div class="mb-2" id="articleType"> <%= article.articleType %>  </div></a>
             <% } %> 
             <% if(article.articleType === 'Earnings Review') { %> 
-            <a href="/earningsreviews"><div id="articleType2"> <%= article.articleType %>  </div></a>
+            <a href="/earningsreviews"><div class="mb-2" id="articleType2"> <%= article.articleType %>  </div></a>
             <% } %>   
             <% if(article.articleType === 'Sectors & Trends') { %> 
-            <a href="/sectors"><div id="articleType3"> <%= article.articleType %>  </div></a>
+            <a href="/sectors"><div class="mb-2" id="articleType3"> <%= article.articleType %>  </div></a>
             <% } %>   
             <h4 class="card-title"><%= article.title %></h4>
-            <div id="authorName" class="card-subtitle">
-               <div id="authorName">STILLWATER</div>
-              <%= article.createdAt.toLocaleDateString() %>
-            </div>
+            
             <div  class="card-text mb-2">
-              <h5 style="margin-top: .25rem; font-weight: 300;"> <%= article.description %> </h5>
+              <h5 style="margin-top: .5rem; padding-bottom: .25rem; font-weight: 300;"> <%= article.description %> </h5>
             </div>
-            <div style="margin-bottom: 0rem;" id="tickerTagsLine">
+            <div style="margin-bottom: .5rem;" id="tickerTagsLine">
               <div class="tickerline">
                 <% if(article.articleTicker) { %> 
                   <div class="hiddenDiv">
@@ -170,7 +156,7 @@
                   </div>
                   <% } %> 
               </div>
-              <div class="tagsline">
+              <div style="margin-top: .25rem; margin-bottom: .5rem;" class="tagsline" >
                 <% if(article.articleTag) { %> 
                   <div>
                     <a  style="border: white 2px solid; " href="tags/<%= article.articleTag %>" class="  btn-primary tags"> <%= article.articleTag %> </a>
@@ -199,7 +185,18 @@
               </div>
   
             </div>
-            <a href="articles/<%= article.slug %> " class="btn indexbtn btn-dark ">Read More</a>
+            <div style="display: flex; flex-direction: row;" >
+              <a href="articles/<%= article.slug %> " class="btn index btn btn-dark mt-1 ">Read More</a>
+              <div style="display: flex; flex-direction: row; margin-left: 1rem;"> 
+                <div style="padding-top: 5px;">
+                  <img src="https://imgur.com/IzGGPdO.jpg" height="35px" width="auto" alt="">
+                </div>
+                <div id="authorName" class="ml-1 card-subtitle">
+                  <div style="padding-top: .1rem;" id="authorName">STILLWATER</div>
+                  <div><%= article.createdAt.toLocaleDateString() %></div>
+                </div>
+              </div> 
+            </div>
 
             <!-- <a href="articles/edit/<%= article.id %> " id="share1" class="btm btn"><i class=" fab fa-twitter-square fa-2x"></i></a> -->
            

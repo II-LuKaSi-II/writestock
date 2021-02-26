@@ -176,19 +176,19 @@ margin-left: 15.5rem
 #articleType {
   font-size: 15;
   font-weight: 600;
-  color: rgb(38, 139, 197);
+  color: navy;
 }
 
 #articleType2 {
   font-size: 15;
   font-weight: 600;
-  color: rgb(39, 196, 91);
+  color: rgb(30, 150, 70);
 }
 
 #articleType3 {
   font-size: 15;
   font-weight: 600;
-  color: rgb(217, 240, 85);
+  color: rgb(119, 43, 43);
 }
 
 #tickerTagsLine {
@@ -563,7 +563,7 @@ margin-left: 15.5rem
   color: rgb(67, 99, 160); 
   font-size: 12px;
   font-weight: 500;
-  margin-right: .25rem;
+  padding-top: 8px;
 
 }
 
@@ -662,11 +662,6 @@ margin-left: 15.5rem
      margin-right: -1rem;
    }
    
-   .topBtn {
-    margin-top: .4rem;
-    margin-left: 0rem;
-  }
-
    .body {
     width: 100%;
     padding: 1rem;
