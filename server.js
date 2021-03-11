@@ -10,16 +10,23 @@ const Article = require('./models/article')
 const request = require('request');
 const bodyParser = require('body-parser')
 
-const articleRouter = require('./routes/articles')
-const homeRouter = require('./routes/home')
-const tagsRouter = require('./routes/tags')
-const tickerRouter = require('./routes/ticker')
 //this is to use other methods besdies get post
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
 const session = require('express-session')
 const passport = require('passport')
 const { ensureAuthenticated } = require('./config/auth')
+
+// Routers
+const homeRouter = require('./routes/home')
+const tagsRouter = require('./routes/tags')
+const tickerRouter = require('./routes/ticker')
+const articleRouter = require('./routes/articles')
+const weeklyTrendingRouter = require('./routes/WeeklyTrending')
+
+const { 
+    addStockInfoOnArticles
+} = require('./helpers/article.helper');
 
 const app = express()
 
@@ -61,7 +68,6 @@ function call_api(finishedAPI, tickticktick) {
                 };
             });
     }
-
 };
 
 
@@ -108,7 +114,9 @@ app.use('/public', express.static('public'));
 
 //create route for index, takes in request and response
 app.get('/', async (req, res) => { 
-    const articles = await Article.find().sort({createdAt: 'desc'})
+    let articles = await Article.find().sort({createdAt: 'desc'}).lean()
+    // articles = await addStockInfoOnArticles(articles);
+    // console.log(articles[0])
     call_api(function(doneAPI) {
             res.render('articles/index', {
             articles: articles, 
@@ -206,6 +214,7 @@ app.use('/ticker', tickerRouter)
 app.use('/users', require('./routes/users'))
 app.use('/subscribers', require('./routes/subscribers'))
 app.use('/articles', articleRouter)
+app.use('/weeklyTrendingStocks', weeklyTrendingRouter)
 
 const PORT = process.env.PORT || 5000;
 //listening on what port

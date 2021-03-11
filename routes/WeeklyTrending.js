@@ -4,6 +4,7 @@ const evalidate  = require('evalidate')
 const transform_mongoose_error = require('mongoose-validation-error-handler');
 
 const WeeklyTrendingStock = require('./../models/WeeklyTrendingStock')
+const { addStockInfoOnWeeklyTrendingStocs } = require('../helpers/weeklyTrendingStock.helper');
 
 const router = express.Router()
 
@@ -11,7 +12,8 @@ const router = express.Router()
  * Get all trending stocks
  */
 router.get("/", async (req, res) => {
-    const trendings = await WeeklyTrendingStock.find({})
+    let trendings = await WeeklyTrendingStock.find({}).lean()
+    trendings = await addStockInfoOnWeeklyTrendingStocs(trendings);
     res.json(trendings);
 });
 

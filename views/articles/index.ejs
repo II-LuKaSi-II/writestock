@@ -15,10 +15,69 @@
   <link href="/public/assets/styles.css" rel="stylesheet" type="text/css" />
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
   <script src="https://use.fontawesome.com/5b9858c609.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>Write Stock Blog For now</title>
 
  
+  <style>
+    #weekly-stock-card-container {
+      display: flex;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      position: relative;
+    }
 
+    #weekly-stock-card-container::-webkit-scrollbar {
+      width: 0;
+    }
+
+    .weekly-stock-card {
+      min-width: 22.5%;
+      max-width: 22.5%;
+      margin: 0.25rem;
+    }
+
+    .weekly-stock-card:hover {
+      transform: scale(1.05);
+    }
+
+    .weekly-stock-card-body {
+      width: 100%;
+    }
+
+    .left-button {
+      position: sticky;
+      top: 50%;
+      left: 0;
+      z-index: 1;
+    }
+
+    .right-button {
+      position: sticky;
+      top: 50%;
+      right: 0;
+      z-index: 1;
+    }
+
+    .slider-button {
+      height: 100%;
+      color: black;
+      margin-top: 100%;
+    }
+
+    .btn-circle {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      padding: 6px 0;
+      font-size: 12px;
+      line-height: 1.428571429;
+      border-radius: 15px;
+      background-color: blanchedalmond;
+    }
+
+  </style>
 
   <!-- Bootstrap core CSS -->
   <!-- <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
@@ -59,8 +118,18 @@
   <div id="" style="border-radius: 0px; background-color: rgb(248, 246, 246, .5) ; margin-top: 2.75rem; padding-bottom: 0rem; display: flex; flex-direction: row;">
       <h4 style="color: rgb(17, 17, 17); padding: 1.25rem; border: maroon 3px solid; border-radius: 6px; background-color: white;  font-weight: 300; font-size: 26px; margin-right: 16.5rem; margin-left: 16.5rem;"> <strong id="authorName2" style="font-size: 24px; padding-top: 5rem; margin-right: .15rem;">WRITESTOCK</strong> is the current project of New York based financial analyst, <strong style=" font-size: 24px; color: rgb(67, 99, 160);" id="authorName2">STILLWATER.</strong> Through deep-dive analytical reporting, reviews of company financials, and insight into current market trends, our goal is to help the reader learn about new and innovative companies. This site is meant for entertainment purposes only and should not be taken as financial advice. 
       </h4>
-      
   </div> 
+  <div id="weekly-stock-container" style="margin-top: 2rem; margin-right: 16.5rem; margin-left: 16.5rem; margin-bottom: 1rem">
+    <h3>This Weeks Stocks</h3>
+    <div id="weekly-stock-card-container">
+      <div class="left-button">
+        <button id="left-button" class="btn slider-button btn-circle"><i class="fa fa-chevron-left"></i></button>
+      </div>
+      <div class="right-button">
+        <button id="right-button" class="btn slider-button  btn-circle"> <i class="fa fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
   <div style="margin-top: 2rem; margin-right: 16.5rem; margin-left: 16.5rem; margin-bottom: 1rem; border-bottom:  rgb(67, 99, 160, .5) 2px solid;"></div>      
     <br>
     <!-- <div style="margin-right: 6rem; margin-left: 6rem;" class="row mb-2">
@@ -244,4 +313,63 @@
     </div>
   </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+  $(document).ready(() => {
+    $("#left-button").click(() => {
+      event.preventDefault();
+      $("#weekly-stock-card-container").animate({ scrollLeft: "-=400px" });
+    });
+
+    $("#right-button").click(() => {
+      event.preventDefault();
+      $("#weekly-stock-card-container").animate({ scrollLeft: "+=400px" })
+    });
+
+    $.ajax({
+      url: '/weeklyTrendingStocks',
+      type: 'GET',
+      success: (response) => {
+        loadWeeklyStock(response);
+      },
+      error: (response) => {
+        $("#weekly-stock-container").hide();
+      }
+    });
+  });
+
+  const loadWeeklyStock = (data) => {
+    for (let i = 0; i < data.length; i++) {
+      constructWeeklyStock(data[i]);
+    }
+  }
+
+  const constructWeeklyStock = (data) => {
+    let priceChange = calculatePriceChange(data)
+    let priceChangeElement = priceChange >= 0 ? 
+                              `<span style='color: green'> &#x25B2; ${priceChange}% </span>` :
+                              `<span style='color: red'> &#x25BC; ${priceChange}% </span>`;
+
+    let element = `
+      <div class="weekly-stock-card">
+        <div class="card">
+          <div class="card-body weekly-stock-card-body">
+            <h5 class="card-title">${data.name} <a  href="#" class=" tickersbtn btn-primary tags"> ${data.ticker} </a> </h5>
+            <h6> <b>$${data.price}</b> </h6>
+            ${priceChangeElement}
+          </div>
+        </div>
+      </div>
+    `;
+    $(element).insertAfter('.left-button');
+  };
+
+  const calculatePriceChange = (data) => {
+    const currentPrice = data.stock.latestPrice ? parseFloat(data.stock.latestPrice) : parseFloat(data.stock.iexRealtimePrice)
+    const previousPrice = parseFloat(data.price)
+
+    return (((currentPrice - previousPrice) / previousPrice) * 100).toFixed(2);
+  }
+
+</script>
 </html>
