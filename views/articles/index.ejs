@@ -350,6 +350,21 @@
       <br />
     </div>
   </div>
+  <div class="modal" tabindex="-1" role="dialog" id="weeklyStockInfo">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="model-body-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="model-body-content"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
@@ -378,12 +393,11 @@
 
   const constructWeeklyStock = (data) => {
     let priceChange = calculatePriceChange(data)
-    let priceChangeElement = priceChange >= 0 ? 
-                              `<span style='color: green'> &#x25B2; ${priceChange}% </span>` :
-                              `<span style='color: red'> &#x25BC; ${priceChange}% </span>`;
+    let content = data.content ? data.content : '';
+    let priceChangeElement = priceChange >= 0 ?  `<span style='color: green'> &#x25B2; ${priceChange}% </span>` : `<span style='color: red'> &#x25BC; ${priceChange}% </span>`;
 
     let element = `
-      <div class="weekly-stock-card">
+      <div class="weekly-stock-card" onclick='onWeeklyInfoClicked("${escape(data.name)}", "${data.content ? escape(data.content) : ""}")'>
         <div class="card">
           <div class="card-body weekly-stock-card-body">
             <h5 class="card-title">${data.name} <a  href="#" class=" tickersbtn btn-primary tags"> ${data.ticker} </a> </h5>
@@ -401,6 +415,14 @@
     const previousPrice = parseFloat(data.price)
 
     return (((currentPrice - previousPrice) / previousPrice) * 100).toFixed(2);
+  }
+
+  const onWeeklyInfoClicked = (title, content) => {
+    if (content) {
+      $("#weeklyStockInfo").modal('show');
+      $("#model-body-title").text(unescape(title));
+      $("#model-body-content").html(unescape(content));
+    }
   }
 
 </script>
