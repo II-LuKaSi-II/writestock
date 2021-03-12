@@ -9,18 +9,22 @@ const dompurify = createDomPurify(new JSDOM().window)
 const WeeklyTrendingSchema = new mongoose.Schema({
     name: {
         type: String,
+        trim: true,
         required: true,
     },
     slug: {
         type: String,
+        trim: true,
         required: true,
     },
     ticker: {
         type: String,
+        trim: true,
         required: true,
     },
     price: {
         type: Number,
+        trim: true,
         required: true,
     },
     content: {

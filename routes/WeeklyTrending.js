@@ -18,6 +18,33 @@ router.get("/", async (req, res) => {
 });
 
 /**
+ * Get trending stocks management page
+ */
+ router.get("/manage", async (req, res) => {
+    let stocks = await WeeklyTrendingStock.find({}).lean()
+    res.render('weekly_trending_stocks/table', {
+        stocks: stocks 
+    });
+});
+
+/**
+ * Register trending stocks page
+ */
+ router.get("/register", async (req, res) => {
+    res.render('weekly_trending_stocks/register');
+});
+
+/**
+ * Get trending stocks management page
+ */
+ router.get("/manage/:id/edit", async (req, res) => {
+    let stock = await WeeklyTrendingStock.findById(req.params.id);
+    res.render('weekly_trending_stocks/edit', {
+        stock: stock 
+    });
+});
+
+/**
  * Create a trending stock
  */
 router.post("/", async (req, res) => {
@@ -29,7 +56,9 @@ router.post("/", async (req, res) => {
     const result = Schema.validate(req.body);
     if (result.isValid) {
         WeeklyTrendingStock.create(req.body)
-            .then((response) => res.json(response))
+            .then((response) => {
+                res.redirect(`/weeklyTrendingStocks/manage/${response._id}/edit`);
+            })
             .catch((error) => {
                 let errorMessage = transform_mongoose_error.default(error, { capitalize: true, humanize: true });
                 res.status(400).json({ errors: errorMessage });
@@ -56,5 +85,44 @@ router.post("/", async (req, res) => {
     res.json(result);
 });
 
+/**
+ * Update a trending stock by Id
+ */
+ router.post("/:id/update", async (req, res) => {
+    let isValidId = ObjectId.isValid(req.params.id)
+    if (!isValidId) {
+        return res.status(404).json({ errors: [ 'Trending stock not found '] })
+    }
+    let result = await WeeklyTrendingStock.findOne({ _id: req.params.id })
+    if (!result) {
+        return res.status(404).json({ errors: [ 'Trending stock not found '] })
+    }
+
+    result.name = req.body.name ? req.body.name : result.name;
+    result.price = req.body.price ? req.body.price : result.price;
+    result.ticker = req.body.ticker ? req.body.ticker : result.ticker;
+    result.content = req.body.content ? req.body.content : result.content;
+    result.save((error, response) => {
+        if (error) {
+            let errorMessage = transform_mongoose_error.default(error, { capitalize: true, humanize: true });
+            res.status(400).json({ errors: errorMessage });
+        }
+        else {
+            res.redirect(`/weeklyTrendingStocks/manage`);
+        }
+    });
+});
+
+/**
+ * Delete a trending stock by Id
+ */
+ router.get("/:id/delete", async (req, res) => {
+    let isValidId = ObjectId.isValid(req.params.id)
+    if (!isValidId) {
+        return res.status(404).json({ errors: [ 'Trending stock not found '] })
+    }
+    let result = await WeeklyTrendingStock.deleteMany({ _id: req.params.id })
+    res.redirect(`/weeklyTrendingStocks/manage`);
+});
 
 module.exports = router

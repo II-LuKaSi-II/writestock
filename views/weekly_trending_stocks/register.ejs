@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<div class="container">
+    <h2 class="mb-4 mt-4">Register Weekly Trending Stock</h2>
+    <form action="/weeklyTrendingStocks" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input required type="text" name="name" id="name" class="form-control"> 
+        </div>
+        <div class="form-group">
+            <label for="ticker">Ticker</label>
+            <input required type="text" name="ticker" id="ticker" class="form-control"> 
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input required type="text" name="price" id="price" class="form-control"> 
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea name="content" id="content" rows="10" class="form-control"></textarea>
+        </div>
+        <a href="/weeklyTrendingStocks/manage" class="btn btn-secondary">Cancel</a>
+        <button class="ml-1 btn btn-primary submit" type="submit">Save</button>
+    </form>
+</div>  
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+    let simplemde = new SimpleMDE();
+</script>
