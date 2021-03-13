@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h2 class="mb-4 mt-4">Edit Weekly Trending Stock</h2>
+        </div>
+        <div class="col-2">
+            <a href="/weeklyTrendingStocks/<%= stock._id %>/delete" class="mb-4 mt-4 btn btn-danger float-right submit"><i class="fas fa-trash-alt"> Delete</i></a>
+        </div>
+    </div>
+    <h2 class="mb-4 mt-4"></h2>
+    <form action="/weeklyTrendingStocks/<%= stock._id %>/update" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input required value="<%= stock.name %> " type="text" name="name" id="name" class="form-control"> 
+        </div>
+        <div class="form-group">
+            <label for="ticker">Ticker</label>
+            <input required value="<%= stock.ticker %> " type="text" name="ticker" id="ticker" class="form-control"> 
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input required value="<%= stock.price %> " type="text" name="price" id="price" class="form-control"> 
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea name="content" id="content" rows="10" class="form-control"><%= stock.content %></textarea>
+        </div>
+        <a href="/weeklyTrendingStocks/manage" class="btn btn-secondary">Cancel</a>
+        <button class="ml-1 btn btn-primary submit" type="submit">Save</button>
+    </form>
+</div>  
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+    let simplemde = new SimpleMDE();
+</script>
