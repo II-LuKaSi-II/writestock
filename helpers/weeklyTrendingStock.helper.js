@@ -2,7 +2,7 @@ const async = require('async');
 const moment = require('moment');
 
 const {
-    getStockInfo, getHistoricalPriceInfoByDate
+    getStockInfo
 } = require("./iexapis.helper");
 
 module.exports = {

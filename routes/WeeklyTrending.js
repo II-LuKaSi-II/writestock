@@ -102,7 +102,7 @@ router.post("/", async (req, res) => {
     result.price = req.body.price ? req.body.price : result.price;
     result.ticker = req.body.ticker ? req.body.ticker : result.ticker;
     result.content = req.body.content ? req.body.content : result.content;
-    console.log(result)
+
     result.save((error, response) => {
         if (error) {
             console.log(error)

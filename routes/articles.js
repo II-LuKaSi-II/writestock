@@ -1,8 +1,12 @@
+const _ = require('lodash')
 const express = require('express')
 const Article = require('./../models/article')
 const router = express.Router()
 const { ensureAuthenticated } = require('../config/auth')
 
+const {
+  getStockInfo
+} = require("../helpers/iexapis.helper");
 
 //these all begin with /articles becuase that's how theyre brought into server.js
 router.get('/new', ensureAuthenticated, (req, res) => {
@@ -24,10 +28,15 @@ router.get('/edit/:id', ensureAuthenticated, async (req, res) => {
 
 router.get('/:slug', async (req, res) => {
   const article = await Article.findOne({ slug: req.params.slug })
-  // handle case where article does not exist
-  if (article == null) res.redirect('/')
-  // if (!article)
-  res.render('articles/show', { article: article })
+  if (article == null) {
+    return res.redirect('/')
+  }
+  const stock = await getStockInfo(article.articleTicker)
+  const currentPrice = stock.latestPrice ? _.toNumber(stock.latestPrice) : _.toNumber(stock.iexRealtimePrice)
+  const previousPrice = _.toNumber(article.pricewritten)
+  const priceChange = (((currentPrice - previousPrice) / previousPrice) * 100).toFixed(2);
+
+  res.render('articles/show', { article: article, stock, priceChange, priceIncreased: priceChange > 0, priceDecreased: priceChange < 0 })
 })
 
 router.post('/', async (req, res, next) => {
