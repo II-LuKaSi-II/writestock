@@ -31,11 +31,17 @@ router.get('/:slug', async (req, res) => {
   if (article == null) {
     return res.redirect('/')
   }
-  const stock = await getStockInfo(article.articleTicker)
-  const currentPrice = stock.latestPrice ? _.toNumber(stock.latestPrice) : _.toNumber(stock.iexRealtimePrice)
-  const previousPrice = _.toNumber(article.pricewritten)
-  const priceChange = (((currentPrice - previousPrice) / previousPrice) * 100).toFixed(2);
 
+  let stock, currentPrice, previousPrice, priceChange;
+
+  stock = await getStockInfo(article.articleTicker)
+  if (stock) {
+    currentPrice = stock.latestPrice ? _.toNumber(stock.latestPrice) : _.toNumber(stock.iexRealtimePrice)
+    previousPrice = _.toNumber(article.pricewritten)
+    priceChange = (((currentPrice - previousPrice) / previousPrice) * 100).toFixed(2);
+  }
+
+  console.log(currentPrice, previousPrice, priceChange)
   res.render('articles/show', { article: article, stock, priceChange, priceIncreased: priceChange > 0, priceDecreased: priceChange < 0 })
 })
 
