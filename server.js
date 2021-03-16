@@ -21,6 +21,7 @@ const { ensureAuthenticated } = require('./config/auth')
 const homeRouter = require('./routes/home')
 const tagsRouter = require('./routes/tags')
 const tickerRouter = require('./routes/ticker')
+const iexapisRouter = require('./routes/iexapis')
 const articleRouter = require('./routes/articles')
 const weeklyTrendingRouter = require('./routes/WeeklyTrending')
 
@@ -214,6 +215,7 @@ app.use('/ticker', tickerRouter)
 app.use('/users', require('./routes/users'))
 app.use('/subscribers', require('./routes/subscribers'))
 app.use('/articles', articleRouter)
+app.use('/iexapis', iexapisRouter)
 app.use('/weeklyTrendingStocks', weeklyTrendingRouter)
 
 const PORT = process.env.PORT || 5000;

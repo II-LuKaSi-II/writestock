@@ -290,7 +290,13 @@
                   </div>
                   <% } %> 
               </div>
-  
+              <% if(article.pricewritten) { %> 
+                <div style="margin-top: .25rem; margin-bottom: .5rem;" class="tagsline" >
+                  <h6 id="pricewritten">Price: $<%= article.pricewritten %> </h6>
+                </div>
+              <% } %>
+              <input type="hidden" name="articleprice" id="articleprice" value="<%= article.pricewritten %>">
+              <input type="hidden" name="articleticker" id="articleticker" value="<%= article.articleTicker %>">
             </div>
             <div style="display: flex; flex-direction: row;" >
               <a href="articles/<%= article.slug %> " class="btn index btn btn-dark mt-1 ">Read More</a>
@@ -300,7 +306,7 @@
                 </div>
                 <div id="authorName" class="ml-1 card-subtitle">
                   <div style="padding-top: .1rem;" id="authorName">STILLWATER</div>
-                  <div><%= article.createdAt.toLocaleDateString() %></div>
+                  <div>$<%= article.createdAt.toLocaleDateString() %></div>
                 </div>
               </div> 
             </div>
@@ -382,6 +388,36 @@
         $("#weekly-stock-container").hide();
       }
     });
+
+    let articles = $("#recentArticles").children();
+    for (let i = 0; i < articles.length; i++) {
+      let tickerElement = $(articles[i]).find('#articleticker')  
+      let priceElement = $(articles[i]).find("#articleprice")
+      
+      let ticker = tickerElement.val();
+      let price = priceElement.val();
+      if (ticker && price) {
+        $.ajax({
+          url: '/iexapis/priceDifference',
+          type: 'POST',
+          data: {
+            ticker: ticker,
+            price: price
+          },
+          success: (response) => {
+           let pricewrittenElement = $(articles[i]).find("#pricewritten");
+           let priceChange = parseFloat(response.priceChange)
+           if (priceChange > 0) {
+            pricewrittenElement.html(pricewrittenElement.html() + `( <span style='color: green'> &#x25B2; ${priceChange}% </span> )`)
+           }
+           else {
+            pricewrittenElement.html(pricewrittenElement.html() + `( <span style='color: red'> &#x25BC; ${priceChange}% </span> )`)
+           }
+          },
+          error: (response) => {}
+        });
+      }
+    }
   });
 
   const loadWeeklyStock = (data) => {
